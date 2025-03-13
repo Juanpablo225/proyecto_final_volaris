@@ -1,0 +1,216 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo del encabezado */
+header {
+    height: 100px; /* Espacio en blanco arriba */
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0 20px;
+    gap: 15px;
+}
+
+header h1 {
+    margin: 0;
+    color: #333;
+    font-size: 24px;
+}
+
+/* Estilo de la imagen del logo */
+.logo {
+    height: 60px;
+    width: auto;
+}
+
+.logo2 {
+    height: 100px;
+    width: auto;
+}
+
+/* Estilo del contenido principal */
+main {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centra verticalmente el contenido */
+    padding: 20px;
+}
+
+/* Fondo con imágenes que cambian */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: fadeBackground 10s infinite;
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes fadeBackground {
+    0%, 100% { background-image: url('../IMAGENES/Fondos/p1.jpg'); }
+    33% { background-image: url('../IMAGENES/Fondos/p2.jpg'); }
+    67% { background-image: url('../IMAGENES/Fondos/p3.jpg'); }
+     0%, 100% { background-image: url('../IMAGENES/Fondos/p4.jpg'); }
+    33% { background-image: url('../IMAGENES/Fondos/p5.jpg'); }
+    67% { background-image: url('../IMAGENES/Fondos/p6.jpg'); }
+    0%, 100% { background-image: url('../IMAGENES/Fondos/p7.jpg'); }
+    33% { background-image: url('../IMAGENES/Fondos/p8.jpg'); }
+    67% { background-image: url('../IMAGENES/Fondos/p9.jpg'); }
+
+}
+
+/* Estilo del formulario de inicio de sesión */
+.login-form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px; /* Limita el ancho máximo */
+    text-align: center;
+    margin-bottom: 50px; /* Espacio para separar el formulario del seguimiento */
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.password-field {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.password-field input {
+    flex: 1;
+    padding-right: 40px; /* Espacio para el ícono */
+}
+
+.password-field .toggle-password {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;  /* Centra verticalmente */
+    justify-content: center;  /* Centra el texto */
+    position: relative;  /* Permite posicionar el ícono de forma absoluta */
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+.btn-icon {
+    width: 25px;  /* Tamaño del ícono */
+    height: 20px;
+    position: absolute;
+    right: 10px;  /* Lo coloca en el extremo derecho */
+}
+
+
+
+.links {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.links a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* Sección de seguimiento */
+.track-section {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.track-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.track-section span {
+    font-weight: normal;
+    color: #555;
+}
+
+.track-form {
+    display: flex;
+    gap: 10px;
+}
+
+.track-prefix {
+    width: 50px;
+    text-align: center;
+}
+
+.track-input {
+    flex: 1;
+}
+
+.track-btn {
+    background-color: #e63946;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.track-btn:hover {
+    background-color: #a52433;
+}
