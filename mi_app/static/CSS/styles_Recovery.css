@@ -1,5 +1,4 @@
-/* General Reset */
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -29,18 +28,6 @@ header h1 {
     color: #333;
     font-size: 24px;
 }
-
-/* Estilo de la imagen del logo */
-.logo {
-    height: 60px;
-    width: auto;
-}
-
-.logo2 {
-    height: 100px;
-    width: auto;
-}
-
 /* Estilo del contenido principal */
 main {
     flex: 1;
@@ -78,10 +65,8 @@ main {
     67% { background-image: url('../IMAGENES/Fondos/p9.jpg'); }
 
 }
-
-/* Estilo del formulario de inicio de sesión */
-.login-form {
-    background: rgba(255, 255, 255, 0.9);
+.Recovery-from{
+     background: rgba(255, 255, 255, 0.9);
     padding: 50px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -90,45 +75,71 @@ main {
     text-align: center;
     margin-bottom: 50px; /* Espacio para separar el formulario del seguimiento */
 }
+.Recovery-from h1{
 
-.login-form h2 {
     margin-bottom: 20px;
     font-size: 24px;
     text-align: center;
 }
 
-.login-form input {
-    width: 100%;
+.Recovery-from input{
+   width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
+
+}
+/* Contenedor principal de los botones */
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Un botón a la izquierda y otro a la derecha */
+    width: 100%; /* Que ocupen toda la fila */
+    padding: 10px; /* Espaciado opcional */
 }
 
-.password-field {
+/* Estilos generales de los botones */
+.btn-cancel-email, .btn-mail {
     display: flex;
     align-items: center;
-    position: relative;
-}
-
-.password-field input {
-    flex: 1;
-    padding-right: 40px; /* Espacio para el ícono */
-}
-
-.password-field .toggle-password {
-    position: absolute;
-    right: 10px;
-    background: none;
+    gap: 8px; /* Espacio entre el icono y el texto */
+    padding: 10px 20px;
     border: none;
-    font-size: 18px;
+    border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
+    min-width: 120px; /* Evita que los botones se achiquen demasiado */
 }
 
-.login-btn {
+/* Estilos específicos de cada botón */
+.btn-cancel-email {
+    background-color: #ff002f;
+    color: white;
+}
+
+.btn-cancel-email:hover {
+    background-color: #ac0333;
+}
+
+.btn-mail {
+    background-color: #11ff00;
+    color: white;
+}
+
+.btn-mail:hover {
+    background-color: #587152;
+}
+
+/* Ajuste para los iconos dentro de los botones */
+.btn-icon-cancel, .btn-icon-email {
+    width: 20px;
+    height: 20px;
+}
+
+.btn-CODE {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #11ff00;
     color: white;
     border: none;
     border-radius: 5px;
@@ -140,77 +151,6 @@ main {
     position: relative;  /* Permite posicionar el ícono de forma absoluta */
 }
 
-.login-btn:hover {
+.btn-CODE:hover {
     background-color: #0056b3;
 }
-
-.btn-icon {
-    width: 25px;  /* Tamaño del ícono */
-    height: 20px;
-    position: absolute;
-    right: 10px;  /* Lo coloca en el extremo derecho */
-}
-
-
-<!--
-comentado.links {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.links a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.links a:hover {
-    text-decoration: underline;
-}
-
-/* Sección de seguimiento */
-.track-section {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 350px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.track-section h3 {
-    font-size: 20px;
-    margin-bottom: 15px;
-}
-
-.track-section span {
-    font-weight: normal;
-    color: #555;
-}
-
-.track-form {
-    display: flex;
-    gap: 10px;
-}
-
-.track-prefix {
-    width: 50px;
-    text-align: center;
-}
-
-.track-input {
-    flex: 1;
-}
-
-.track-btn {
-    background-color: #e63946;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.track-btn:hover {
-    background-color: #a52433;
-}-->

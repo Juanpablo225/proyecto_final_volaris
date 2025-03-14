@@ -15,3 +15,6 @@ from django.shortcuts import render
 
 def login_view(request):
     return render(request, 'mi_app/login.html')  # Asegúrate de que la plantilla esté en 'mi_app/login.html'
+
+def RECOVERY(request):
+    return render(request, 'mi_app/Recovery.html')

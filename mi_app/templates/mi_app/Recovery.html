@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="{% static 'ICONS/logo_sae.ico' %}">
+     <link rel="stylesheet" href="{% static 'css/styles_Recovery.css'%}">
+    <meta charset="UTF-8">
+    <title> USER RECOVERY</title>
+</head>
+<body>
+
+<header>
+    <H1>user recovery</H1>
+
+</header>
+
+<main>
+
+    <div class="background"></div>
+    <div class="Recovery-from">
+        <h4>mail </h4>
+<div class="input-container">
+    <input type="text" name="Email" placeholder="correoejemplo@gmail.com" required>
+</div>
+
+<div class="button-container">
+   <a href="{% url "login" %}"> <button type="button" class="btn-cancel-email">
+        <img src="{% static 'ICONS/icon-cancel.ico' %}" alt="cancel-button" class="btn-icon-cancel">
+        Cancel
+    </button></a>
+    <button type="submit" class="btn-mail">
+        Send
+        <img src="{% static 'ICONS/send.ico' %}" alt="send-button" class="btn-icon-email">
+    </button>
+</div>
+
+
+
+
+    </div>
+
+
+
+<div class="Recovery-from">
+        <h4>mail </h4>
+<div class="input-container">
+    <input type="text" name="CODE" placeholder="SEGURITY CODE" required>
+</div>
+
+<div class="button-container">
+
+
+    <button type="submit" class="btn-CODE">Send<img src="{% static 'ICONS/send.ico' %}" alt="send-button" class="btn-icon-email"></button>
+</div>
+
+</div>>
+
+
+
+</main>
+
+
+</body>
+</html>
