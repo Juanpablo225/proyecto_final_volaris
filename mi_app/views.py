@@ -18,3 +18,23 @@ def login_view(request):
 
 def RECOVERY(request):
     return render(request, 'mi_app/Recovery.html')
+#################################################################################################
+def HOME_ADMIN(request):
+    return render(request,'mi_app/HOME_ADMIN.html')
+
+
+def HOME_USER(request):
+    return render(request,'mi_app/HOME_USER.html')
+##################################################################################################
+def SEARCH_ADMIN(request):
+    return render(request, 'mi_app/SEARCH_ADMIN.html')
+
+def SEARCH_USER(request):
+    return render(request, 'mi_app/SEARCH_USER.html')
+#################################################################################################
+def UPLOAD_ADMIN(request):
+    return render(request, 'mi_app/UPLOAD_ADMIN.html')
+
+def UPLOAD_USER(request):
+    return render(request, 'mi_app/UPLOAD_USER.html')
+##################################################################################################

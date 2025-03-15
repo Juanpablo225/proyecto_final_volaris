@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,7 +13,7 @@ body {
 
 /* Estilo del encabezado */
 header {
-    height: 100px; /* Espacio en blanco arriba */
+    height: 50px;
     background-color: white;
     display: flex;
     align-items: center;
@@ -24,23 +24,22 @@ header {
 }
 
 header h1 {
-    margin: 0;
     color: #333;
     font-size: 24px;
 }
-/* Estilo del contenido principal */
+
+/* Contenido principal */
 main {
     flex: 1;
-    position: relative;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Centra verticalmente el contenido */
+    justify-content: center;
     padding: 20px;
+    position: relative;
 }
 
-/* Fondo con imágenes que cambian */
+/* Fondo con imágenes dinámicas */
 .background {
     position: absolute;
     top: 0;
@@ -48,70 +47,67 @@ main {
     width: 100%;
     height: 100%;
     z-index: -1;
-    animation: fadeBackground 10s infinite;
     background-size: cover;
     background-position: center;
+    animation: fadeBackground 10s infinite;
 }
 
 @keyframes fadeBackground {
     0%, 100% { background-image: url('../IMAGENES/Fondos/p1.jpg'); }
     33% { background-image: url('../IMAGENES/Fondos/p2.jpg'); }
     67% { background-image: url('../IMAGENES/Fondos/p3.jpg'); }
-     0%, 100% { background-image: url('../IMAGENES/Fondos/p4.jpg'); }
-    33% { background-image: url('../IMAGENES/Fondos/p5.jpg'); }
-    67% { background-image: url('../IMAGENES/Fondos/p6.jpg'); }
-    0%, 100% { background-image: url('../IMAGENES/Fondos/p7.jpg'); }
-    33% { background-image: url('../IMAGENES/Fondos/p8.jpg'); }
-    67% { background-image: url('../IMAGENES/Fondos/p9.jpg'); }
-
 }
-.Recovery-from{
-     background: rgba(255, 255, 255, 0.9);
-    padding: 50px;
+
+/* Contenedor del formulario */
+.Recovery-from {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 400px; /* Limita el ancho máximo */
+    width: 90%;
+    max-width: 400px; /* Limita el ancho */
     text-align: center;
-    margin-bottom: 50px; /* Espacio para separar el formulario del seguimiento */
-}
-.Recovery-from h1{
-
     margin-bottom: 20px;
-    font-size: 24px;
-    text-align: center;
 }
 
-.Recovery-from input{
-   width: 100%;
+.Recovery-from h4 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.Recovery-from input {
+    width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-
 }
-/* Contenedor principal de los botones */
+
+/* Contenedor de botones */
 .button-container {
     display: flex;
-    justify-content: space-between; /* Un botón a la izquierda y otro a la derecha */
-    width: 100%; /* Que ocupen toda la fila */
-    padding: 10px; /* Espaciado opcional */
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    gap: 10px;
 }
 
-/* Estilos generales de los botones */
+/* Botones */
 .btn-cancel-email, .btn-mail {
     display: flex;
     align-items: center;
-    gap: 8px; /* Espacio entre el icono y el texto */
-    padding: 10px 20px;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-    min-width: 120px; /* Evita que los botones se achiquen demasiado */
+    min-width: 100px;
+    flex-grow: 1; /* Se expanden para ocupar el espacio */
 }
 
-/* Estilos específicos de cada botón */
+/* Estilos individuales */
 .btn-cancel-email {
     background-color: #ff002f;
     color: white;
@@ -130,27 +126,20 @@ main {
     background-color: #587152;
 }
 
-/* Ajuste para los iconos dentro de los botones */
+/* Íconos dentro de los botones */
 .btn-icon-cancel, .btn-icon-email {
     width: 20px;
     height: 20px;
 }
 
-.btn-CODE {
-    width: 100%;
-    padding: 10px;
-    background-color: #11ff00;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;  /* Centra verticalmente */
-    justify-content: center;  /* Centra el texto */
-    position: relative;  /* Permite posicionar el ícono de forma absoluta */
-}
+/* Media Queries para dispositivos móviles */
+@media (max-width: 480px) {
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+    }
 
-.btn-CODE:hover {
-    background-color: #0056b3;
+    .btn-cancel-email, .btn-mail {
+        width: 100%;
+    }
 }
