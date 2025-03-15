@@ -14,8 +14,8 @@ body {
 
 /* Estilo del encabezado */
 header {
-    height: 100px; /* Espacio en blanco arriba */
-    background-color: white;
+    height: 50px; /* Espacio en blanco arriba */
+    background-color: #494646;
     display: flex;
     align-items: center;
     justify-content: center;
