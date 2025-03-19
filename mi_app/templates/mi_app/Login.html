@@ -29,7 +29,17 @@
                     <button type="button" id="toggle-password" class="toggle-password">&#128065;</button>
                 </div>
                 <input type="text" name="stationCode" placeholder="Station Code" required>
-                <button type="submit" class="login-btn">Login <img src="{% static 'ICONS/favicon.ico' %}" alt="Login Icon" class="btn-icon"></button>
+
+
+   <a href="{%url 'HOME_ADMIN' %}">         <button type="submit" class="login-btn">Login admin <img src="{% static 'ICONS/favicon.ico' %}" alt="Login Icon" class="btn-icon"></button> </a>
+
+
+
+
+ <a href="{%url 'HOME_USER' %}">  <button type="submit" class="login-btn">Login usuario <img src="{% static 'ICONS/favicon.ico' %}" alt="Login Icon" class="btn-icon"></button></a>
+
+
+
                 <a href="{%url 'RECOVERY'  %}">Recover your password </a>||<a href="#"></a>
 
 

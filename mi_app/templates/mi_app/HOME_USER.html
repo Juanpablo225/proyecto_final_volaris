@@ -5,8 +5,55 @@
      <link rel="icon" href="{% static 'ICONS/logo_sae.ico' %}">
     <meta charset="UTF-8">
     <title>HOME USER</title>
+
+    <h1>menu de usuarios</h1>>
+
+
 </head>
 <body>
+
+
+
+
+
+
+
+
+    <header>
+
+        <!-- Usar la etiqueta static para cargar las imágenes -->
+
+        <h1>Menú Principal</h1>
+
+
+
+    </header>
+    <main>
+        <div class="background"></div>
+        <div class="menu-central">
+            <h2>¿Qué deseas hacer?</h2>
+            <div class="menu-options">
+                <!-- Aquí usas URL de Django para las vistas -->
+
+
+
+   <a href="{%url 'SEARCH_USER' %}">         <button type="submit" class="login-btn">busar USER <img src="{% static 'ICONS/favicon.ico' %}" alt="Login Icon" class="btn-icon"></button> </a>
+
+
+
+
+ <a href="{%url 'UPLOAD_USER' %}">  <button type="submit" class="login-btn">agregar USER <img src="{% static 'ICONS/favicon.ico' %}" alt="Login Icon" class="btn-icon"></button></a>
+
+
+
+
+                </form>
+            </div>
+        </div>
+</main>
+
+
+
 
 </body>
 </html>

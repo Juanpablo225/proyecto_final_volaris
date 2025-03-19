@@ -4,9 +4,47 @@
 <head>
      <link rel="icon" href="{% static 'ICONS/logo_sae.ico' %}">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>subir administrador</title>
 </head>
 <body>
+
+
+<div class="background"></div>
+
+        <!-- Primer formulario: Subir Archivo -->
+        <div class="login-form">
+            <h2>Subir Archivo</h2>
+            <form action="#" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div style="margin-top: 5px;">
+                    <label for="identificacion"><strong>Identificación</strong></label>
+                    <input type="file" name="identificacion" id="identificacion" required>
+                </div>
+
+                <div style="margin-top: 5px;">
+                    <label for="guia"><strong>Guía</strong></label>
+                    <input type="file" name="guia" id="guia" required>
+                </div>
+
+                <div style="margin-top: 15px;">
+                    <button type="submit" class="subir">Subir</button>
+
+
+                </div>
+            </form>
+
+   <a href="{%url 'HOME_ADMIN' %}">         <button type="submit" class="login-btn">CANCELAR <img src="{% static 'ICONS/favicon.ico' %}" alt="Login Icon" class="btn-icon"></button> </a>
+
+        </div>
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
