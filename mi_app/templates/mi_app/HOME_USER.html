@@ -2,11 +2,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <link rel="icon" href="{% static 'ICONS/logo_sae.ico' %}">
+       <link rel="icon" href="{% static 'ICONS/logo_sae.ico' %}">
     <meta charset="UTF-8">
-    <title>HOME USER</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Central</title>
+    <!-- Usar la etiqueta static para cargar la hoja de estilo -->
+    <link rel="stylesheet" href="{% static 'CSS/styles_HOME.css' %}">
+
+
 </head>
 <body>
+    <header>
 
+<form action="{% url 'login'  %}" method="get">
+                    <button class="btn-buscar"> Log out</button>
+                </form>
+
+
+        <!-- Usar la etiqueta static para cargar las imágenes -->
+        <img src="{% static 'ICONS/logo_sae.ico' %}" alt="Logo de Volaris" class="logo">
+
+
+
+
+    </header>
+    <main>
+        <div class="background"></div>
+        <div class="menu-central">
+            <h2>¿Qué deseas hacer?</h2>
+            <div class="menu-options">
+                <!-- Aquí usas URL de Django para las vistas -->
+                <form action="{%url 'UPLOAD_USER'  %}" method="get">
+                    <button class="btn-agregar">UPLOAD</button>
+                </form>
+                <form action="{%url 'SEARCH_USER'  %}" method="get">
+                    <button class="btn-buscar">SEARCH</button>
+                </form>
+
+            </div>
+        </div>
+
+
+    </main>
 </body>
 </html>

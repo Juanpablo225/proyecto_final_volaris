@@ -1,0 +1,149 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo del encabezado */
+header {
+    height: 100px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0 20px;
+    gap: 15px;
+}
+
+header h1 {
+    margin: 0;
+    color: #333;
+    font-size: 24px;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+}
+
+.logo2 {
+    height: 100px;
+    width: auto;
+}
+
+/* Botón "Cerrar sesión" */
+/* Botón "Cerrar sesión" */
+.logout-button {
+    position: absolute; /* Hace que el botón se posicione en relación al contenedor */
+    left: 20px; /* Espaciado desde la izquierda */
+    top: 50%; /* Centrado verticalmente */
+    transform: translateY(-50%); /* Ajusta el centrado vertical */
+    padding: 10px 15px; /* Espaciado interno del botón */
+    background-color: #dc3545; /* Color rojo */
+    color: white; /* Texto en blanco */
+    text-decoration: none; /* Sin subrayado */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 14px; /* Tamaño de fuente */
+    cursor: pointer; /* Muestra el cursor de "puntero" */
+    transition: background-color 0.3s ease; /* Animación suave en el cambio de color */
+}
+
+.logout-button:hover {
+    background-color: #c82333; /* Rojo más oscuro al pasar el mouse */
+}
+
+
+
+/* Fondo con imágenes que cambian */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: fadeBackground 15s infinite;
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes fadeBackground {
+   0%, 100% { background-image: url('../IMAGENES/Fondos/p1.jpg'); }
+    33% { background-image: url('../IMAGENES/Fondos/p2.jpg'); }
+    67% { background-image: url('../IMAGENES/Fondos/p3.jpg'); }
+}
+
+
+/* Contenedor principal */
+main {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Menú central */
+.menu-central {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.menu-central h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Opciones del menú */
+.menu-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* Botón "Agregar" */
+.btn-agregar {
+    flex: 1;
+    padding: 10px 20px;
+    background-color: #28a745; /* Verde */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-agregar:hover {
+    background-color: #218838;
+}
+
+/* Botón "Buscar" */
+.btn-buscar {
+    flex: 1;
+    padding: 10px 20px;
+    background-color: #17a2b8; /* Azul claro */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color.3s ease;
+}

@@ -14,8 +14,8 @@ body {
 
 /* Estilo del encabezado */
 header {
-    height: 50px; /* Espacio en blanco arriba */
-    background-color: #494646;
+    height: 70px; /* Espacio en blanco arriba */
+    background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,13 +26,13 @@ header {
 
 header h1 {
     margin: 0;
-    color: #333;
+    color: #ffffff;
     font-size: 24px;
 }
 
 /* Estilo de la imagen del logo */
 .logo {
-    height: 60px;
+    height: 30px;
     width: auto;
 }
 
