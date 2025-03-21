@@ -19,7 +19,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgb(255, 255, 255);
     padding: 0 20px;
     gap: 15px;
 }
@@ -32,7 +32,7 @@ header h1 {
 
 /* Estilo de la imagen del logo */
 .logo {
-    height: 30px;
+    height: 40px;
     width: auto;
 }
 
@@ -185,7 +185,7 @@ comentado.links {
 
 .track-section span {
     font-weight: normal;
-    color: #555;
+    color: #ffffff;
 }
 
 .track-form {

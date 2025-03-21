@@ -5,7 +5,7 @@
        <link rel="icon" href="{% static 'ICONS/logo_sae.ico' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú Central</title>
+    <title>HOME</title>
     <!-- Usar la etiqueta static para cargar la hoja de estilo -->
     <link rel="stylesheet" href="{% static 'CSS/styles_HOME.css' %}">
 
@@ -15,7 +15,7 @@
     <header>
 
 <form action="{% url 'login'  %}" method="get">
-                    <button class="btn-buscar"> Log out</button>
+                    <button class="btn-cancelar"> Log out</button>
                 </form>
 
 
@@ -33,10 +33,10 @@
             <div class="menu-options">
                 <!-- Aquí usas URL de Django para las vistas -->
                 <form action="{%url 'UPLOAD_ADMIN'  %}" method="get">
-                    <button class="btn-agregar">Agregar</button>
+                    <button class="btn-agregar">UPLOAD</button>
                 </form>
                 <form action="{% url 'SEARCH_ADMIN' %}" method="get">
-                    <button class="btn-buscar">conbinar</button>
+                    <button class="btn-buscar">SEARCH</button>
                 </form>
 
             </div>
@@ -45,7 +45,7 @@
 
     </main>
  <form action="#" method="get">
-        <button class="btn-buscar">Modificar contraseña de usuario</button>
+        <button class="btn-buscar">EDIT USER</button>
     </form>
 
 
