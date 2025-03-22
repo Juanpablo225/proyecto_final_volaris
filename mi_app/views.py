@@ -11,7 +11,6 @@ from django.shortcuts import render
 # mi_app/views.py
 # mi_app/views.py
 
-from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
@@ -34,6 +33,7 @@ def login_view(request):
             return redirect("HOME_USER")  # Redirige a la página de usuario
 
         else:
+            # Si no se encuentra el usuario, mostrar el mensaje de error
             messages.error(request, "Usuario o contraseña incorrectos")
 
     return render(request, "mi_app/login.html")
@@ -49,6 +49,26 @@ def validar_usuario(username, password, file_path):
     except FileNotFoundError:
         print(f"El archivo {file_path} no existe")
     return False
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 def RECOVERY(request):
