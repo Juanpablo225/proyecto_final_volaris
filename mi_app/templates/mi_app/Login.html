@@ -17,7 +17,7 @@
     <main>
         <div class="background"></div>
         <div class="login-form">
-            <h2>Iniciar Sesión</h2>
+            <h2>LOGIN</h2>
 
             <form action="{% url 'login' %}" method="POST">
                 {% csrf_token %}
@@ -28,8 +28,6 @@
                     <button type="button" id="toggle-password" class="toggle-password">&#128065;</button>
                 </div>
 
-                <input type="text" name="stationCode" placeholder="Station Code" required>
-
                 <button type="submit" class="login-btn">
                     Login <img src="{% static 'ICONS/favicon.ico' %}" alt="Login Icon" class="btn-icon">
                 </button>
@@ -37,8 +35,13 @@
 
             <a href="{% url 'RECOVERY' %}">Recover your password</a>
 
-            {% if error %}
-                <p style="color: red;">{{ error }}</p>
+            <!-- Mostrar mensajes de error si los hay -->
+            {% if messages %}
+                <div class="error-messages">
+                    {% for message in messages %}
+                        <p style="color: red;">{{ message }}</p>
+                    {% endfor %}
+                </div>
             {% endif %}
         </div>
     </main>

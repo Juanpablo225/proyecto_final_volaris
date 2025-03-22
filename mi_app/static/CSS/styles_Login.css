@@ -14,14 +14,12 @@ body {
 
 /* Estilo del encabezado */
 header {
-    height: 70px; /* Espacio en blanco arriba */
-    background-color: #ffffff;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 5px rgb(255, 255, 255);
-    padding: 0 20px;
-    gap: 15px;
+    flex-direction: column; /* Pone el logo y el título en columna */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Mantiene el contenido alineado */
+    text-align: center;
+    gap: 10px; /* Espacio entre el logo y el texto */
 }
 
 header h1 {
@@ -30,16 +28,17 @@ header h1 {
     font-size: 24px;
 }
 
-/* Estilo de la imagen del logo */
+/* Estilo de la imagen del logo *//* Estilo de la imagen del logo */
+/* Centrar el logo en la parte superior */
 .logo {
-    height: 40px;
+    display: block;
+    margin: 0 auto;
+    height: 60px;
     width: auto;
 }
 
-.logo2 {
-    height: 100px;
-    width: auto;
-}
+
+
 
 /* Estilo del contenido principal */
 main {
