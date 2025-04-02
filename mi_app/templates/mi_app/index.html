@@ -18,14 +18,14 @@
     <main>
         <div class="background"></div>
         <div class="login-form">
-            <h2>Iniciar secion</h2>
+            <h2>Inicia sesión</h2>
 
             <form action="{% url 'index' %}" method="POST">
                 {% csrf_token %}
                 <input type="text" name="username" placeholder="ingrese su usuario o correo" required>
 
                 <div class="password-field">
-                    <input type="password" id="password" name="password" placeholder="contrasena" required>
+                    <input type="password" id="password" name="password" placeholder="Contraseña" required>
                     <button type="button" id="toggle-password" class="toggle-password">&#128065;</button>
                 </div>
 
@@ -34,7 +34,7 @@
                 </button>
             </form>
 
-            <a href="{% url 'RECOVERY' %}">Recupear contrasena</a>
+            <a href="{% url 'RECOVERY' %}">Recupear Contraseña</a>
 
             <!-- Mostrar mensajes de error si los hay -->
             {% if messages %}
