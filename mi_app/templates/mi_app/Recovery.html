@@ -3,63 +3,55 @@
 <html lang="en">
 <head>
     <link rel="icon" href="{% static 'ICONS/logo_sae.ico' %}">
-     <link rel="stylesheet" href="{% static 'css/styles_Recovery.css'%}">
+    <link rel="stylesheet" href="{% static 'css/styles_Recovery.css'%}">
     <meta charset="UTF-8">
-    <title> USER RECOVERY</title>
+    <title>Recuperar Contraseña</title>
 </head>
 <body>
 
-<header>
-    <H3>user recovery</H3>
-
-</header>
+<!-- Barra azul superior -->
+<div class="navbar">
+    <img src="{% static 'ICONS/logo_sae.ico' %}" alt="Logo">
+    <h1>Recuperación de Contraseña</h1>
+</div>
 
 <main>
-
     <div class="background"></div>
-    <div class="Recovery-from">
-        <h4>mail </h4>
-<div class="input-container">
-    <input type="email" name="Email" placeholder="correoejemplo@gmail.com" required>
-    <input type="number" name="CODE" placeholder=" CODE station" required>
-</div>
 
-<div class="button-container">
-   <a href="{% url "login" %}"> <button type="button" class="btn-cancel-email">
-        <img src="{% static 'ICONS/icon-cancel.ico' %}" alt="cancel-button" class="btn-icon-cancel">
-        Cancel
-    </button></a>
-    <button type="submit" class="btn-mail">
-        Send
-        <img src="{% static 'ICONS/send.ico' %}" alt="send-button" class="btn-icon-email">
-    </button>
-</div>
+    <!-- Formulario de recuperación de contraseña -->
+    <div class="login-form">
+        <h2>Ingresa tu Correro Electronico</h2>
 
+        <form method="POST">
+            {% csrf_token %}
 
+            <!-- Campo para el correo electrónico -->
 
+            <input type="email" name="email" id="email" placeholder="correoejemplo@gmail.com" required>
 
+            <div class="button-container">
+                <a href="{% url 'login' %}">
+                    <button type="button" class="btn-cancel-email">
+                        Cancelar
+                    </button>
+                </a>
+                <button type="submit" class="btn-mail">
+                    Enviar
+                </button>
+            </div>
+        </form>
     </div>
 
 
-
-<div class="Recovery-from">
-        <h4>mail </h4>
-<div class="input-container">
-    <input type="number" name="CODE" placeholder="SEGURITY CODE" required>
-</div>
-
-<div class="button-container">
-
-
-    <button type="submit" class="btn-CODE">Send<img src="{% static 'ICONS/send.ico' %}" alt="send-button" class="btn-icon-email"></button>
-</div>
-
-</div>>
-
-
-
 </main>
-
+   <!-- 🔵 Barra azul inferior con los enlaces -->
+    <footer class="navbar">
+        <div class="nav-links">
+            <a href="#">Soporte</a>
+            <a href="https://www.youtube.com/watch?v=YW4DbwujexU">Tutorial</a>
+            <a href="#">copy@</a>
+        </div>
+    </footer>
 
 </body>
 </html>

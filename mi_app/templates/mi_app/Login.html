@@ -9,42 +9,52 @@
     <link rel="stylesheet" href="{% static 'css/styles_Login.css' %}">
 </head>
 <body>
-    <header>
+    <!-- 🔵 Barra azul superior con el logo y el título -->
+    <header class="navbar">
         <img src="{% static 'ICONS/logo_sae.ico' %}" alt="Logo Sae" class="logo">
-        <h1>Welcome to Sae</h1>
+        <h1>Bienvenido a SAE</h1>
     </header>
 
     <main>
         <div class="background"></div>
         <div class="login-form">
-            <h2>LOGIN</h2>
+            <h2>Iniciar secion</h2>
 
             <form action="{% url 'login' %}" method="POST">
                 {% csrf_token %}
-                <input type="text" name="username" placeholder="User Name" required>
+                <input type="text" name="username" placeholder="ingrese su usuario o correo" required>
 
                 <div class="password-field">
-                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <input type="password" id="password" name="password" placeholder="contrasena" required>
                     <button type="button" id="toggle-password" class="toggle-password">&#128065;</button>
                 </div>
 
                 <button type="submit" class="login-btn">
-                    Login <img src="{% static 'ICONS/favicon.ico' %}" alt="Login Icon" class="btn-icon">
+                    Entrar <img src="{% static 'ICONS/favicon.ico' %}" alt="Login Icon" class="btn-icon">
                 </button>
             </form>
 
-            <a href="{% url 'RECOVERY' %}">Recover your password</a>
+            <a href="{% url 'RECOVERY' %}">Recupear contrasena</a>
 
             <!-- Mostrar mensajes de error si los hay -->
             {% if messages %}
                 <div class="error-messages">
                     {% for message in messages %}
-                        <p style="color: red;">{{ message }}</p>
+                        <p>{{ message }}</p>
                     {% endfor %}
                 </div>
             {% endif %}
         </div>
     </main>
+
+    <!-- 🔵 Barra azul inferior con los enlaces -->
+    <footer class="navbar">
+        <div class="nav-links">
+            <a href="#">Soporte</a>
+            <a href="https://www.youtube.com/watch?v=YW4DbwujexU">Tutorial</a>
+            <a href="#">copy@</a>
+        </div>
+    </footer>
 
     <script>
         // Mostrar/ocultar contraseña

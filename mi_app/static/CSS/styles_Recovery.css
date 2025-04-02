@@ -1,3 +1,4 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -9,26 +10,67 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-}
-
-/* Estilo del encabezado */
-header {
-    height: 70px;
-    background-color: white;
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 0 20px;
-    gap: 15px;
+    background-color: #f4f4f4;
 }
 
-header h1 {
-    color: #333;
+/* 🔵 Barra azul superior e inferior */
+.navbar {
+    background-color: #0A284E;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+.navbar .nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    margin-top: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el logo y título dentro de la barra */
+.navbar img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.navbar h1 {
     font-size: 24px;
 }
 
-/* Contenido principal */
+/* 🔷 Estilo del encabezado */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    color: #f4f0f0;
+    font-size: 24px;
+}
+
+/* 🔷 Estilo del contenido principal */
 main {
     flex: 1;
     display: flex;
@@ -36,10 +78,10 @@ main {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    position: relative;
+    width: 100%;
 }
 
-/* Fondo con imágenes dinámicas */
+/* 🔷 Fondo de la página */
 .background {
     position: absolute;
     top: 0;
@@ -52,62 +94,56 @@ main {
     animation: fadeBackground 10s infinite;
 }
 
-@keyframes fadeBackground {
-    0%, 100% { background-image: url('../IMAGENES/Fondos/p1.jpg'); }
-    33% { background-image: url('../IMAGENES/Fondos/p2.jpg'); }
-    67% { background-image: url('../IMAGENES/Fondos/p3.jpg'); }
-}
-
-/* Contenedor del formulario */
-.Recovery-from {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 30px;
+/* 🔷 Estilo del formulario de recuperación */
+.login-form {
+    background: rgba(5, 51, 149, 0.9);
+    padding: 50px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 90%;
-    max-width: 400px; /* Limita el ancho */
+    width: 100%;
+    max-width: 400px;
     text-align: center;
+}
+
+.login-form h2 {
     margin-bottom: 20px;
+    font-size: 24px;
+    color: white;
 }
 
-.Recovery-from h4 {
-    margin-bottom: 15px;
-    font-size: 20px;
-}
-
-.Recovery-from input {
+/* 🔷 Campos de entrada */
+.login-form input {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 16px;
 }
 
-/* Contenedor de botones */
+/* 🔷 Contenedor de botones alineados */
 .button-container {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    padding: 10px;
     gap: 10px;
+    margin-top: 10px;
 }
 
-/* Botones */
-.btn-cancel-email, .btn-mail {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+/* 🔷 Botones de acción */
+.btn-cancel-email, .btn-mail, .btn-CODE {
+    flex: 1;
     padding: 10px;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     min-width: 100px;
-    flex-grow: 1; /* Se expanden para ocupar el espacio */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Estilos individuales */
 .btn-cancel-email {
     background-color: #ff002f;
     color: white;
@@ -126,20 +162,48 @@ main {
     background-color: #587152;
 }
 
-/* Íconos dentro de los botones */
-.btn-icon-cancel, .btn-icon-email {
-    width: 20px;
-    height: 20px;
+.btn-CODE {
+    background-color: #007bff;
+    color: white;
 }
 
-/* Media Queries para dispositivos móviles */
+.btn-CODE:hover {
+    background-color: #0056b3;
+}
+
+/* 🔷 Enlaces dentro del formulario */
+.login-form a {
+    display: block;
+    margin-top: 15px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.login-form a:hover {
+    text-decoration: underline;
+}
+
+/* 🔷 Estilos para los iconos dentro de los botones */
+.btn-icon-cancel, .btn-icon-email {
+    width: 20px;
+    height: 10px;
+}
+
+/* 🔷 Mensajes de error */
+.error-messages p {
+    color: red;
+    font-size: 14px;
+}
+
+/* 🔷 Media Queries para dispositivos móviles */
 @media (max-width: 480px) {
     .button-container {
         flex-direction: column;
         gap: 10px;
     }
 
-    .btn-cancel-email, .btn-mail {
+    .btn-cancel-email, .btn-mail, .btn-CODE {
         width: 100%;
     }
 }
