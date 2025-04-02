@@ -2,47 +2,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-       <link rel="icon" href="{% static 'ICONS/logo_sae.ico' %}">
+    <link rel="icon" href="{% static 'ICONS/logo_sae.ico' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú Central</title>
+    <title>HOME</title>
     <!-- Usar la etiqueta static para cargar la hoja de estilo -->
     <link rel="stylesheet" href="{% static 'CSS/styles_HOME.css' %}">
-
-
 </head>
 <body>
-    <header>
-
-<form action="{% url 'login'  %}" method="get">
-                    <button class="btn-cancelar"> Log out</button>
-                </form>
-
-
-        <!-- Usar la etiqueta static para cargar las imágenes -->
-        <img src="{% static 'ICONS/logo_sae.ico' %}" alt="Logo de Volaris" class="logo">
-
-
-
-
-    </header>
-    <main>
-        <div class="background"></div>
-        <div class="menu-central">
-            <h2>¿Qué deseas hacer?</h2>
-            <div class="menu-options">
-                <!-- Aquí usas URL de Django para las vistas -->
-                <form action="{%url 'UPLOAD_USER'  %}" method="get">
-                    <button class="btn-agregar">UPLOAD</button>
-                </form>
-                <form action="{%url 'SEARCH_USER'  %}" method="get">
-                    <button class="btn-buscar">SEARCH</button>
-                </form>
-
+    <!-- 🔵 Barra azul superior con el logo y el título -->
+    <header class="navbar">
+        <!-- Menú desplegable -->
+        <div class="menu-container">
+            <button class="menu-icon" onclick="toggleMenu()">&#9776;</button>
+            <div class="dropdown-menu" id="dropdown-menu">
+                <a href="{% url 'UPLOAD_USER' %}">Subir</a>
+                <a href="{% url 'SEARCH_USER' %}">Buscar</a>
+                <a href="{% url 'login' %}">Salir</a>
             </div>
         </div>
 
+        <img src="{% static 'ICONS/logo_sae.ico' %}" alt="Logo Sae" class="logo">
 
+    </header>
+<h1>bienvenido ...</h1>
+
+
+
+
+    <main>
+        <div class="background"></div>
+        <div class="menu-central">
+           <!-- implementacion de la tabla -->
+
+
+            <!-- implementacion de la tabla -->
+        </div>
     </main>
+
+    <!-- 🔵 Barra azul inferior con los enlaces -->
+    <footer class="navbar">
+        <div class="nav-links">
+            <a href="#">Soporte</a>
+            <a href="https://www.youtube.com/watch?v=YW4DbwujexU">Tutorial</a>
+            <a href="#"> terminos y condiciones...</a>
+        </div>
+    </footer>
+ <!-- 🔵 Barra azul inferior con los enlaces -->
+    <script>
+        // Función para mostrar y ocultar el menú desplegable
+        function toggleMenu() {
+            const menu = document.getElementById('dropdown-menu');
+            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
 </body>
 </html>
