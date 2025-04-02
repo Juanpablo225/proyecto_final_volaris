@@ -19,7 +19,7 @@ ADMIN_FILE = "mi_app/static/TXT/ADMIN.txt"
 USER_FILE = "mi_app/static/TXT/USER.txt"
 
 
-def login_view(request):
+def index(request):
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
@@ -36,7 +36,7 @@ def login_view(request):
             # Si no se encuentra el usuario, mostrar el mensaje de error
             messages.error(request, "Usuario o contraseña incorrectos")
 
-    return render(request, "mi_app/login.html")
+    return render(request, "mi_app/index.html")
 
 
 def validar_usuario(username, password, file_path):

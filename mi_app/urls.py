@@ -9,7 +9,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.login_view, name='login'),  # Define el login para la raíz de mi_app
+    path('', views.index, name='index'),  # Ahora "index" es la vista principal
     path('RECOVERY/', views.RECOVERY, name='RECOVERY'),
   ###########################################################################################
     path('HOME_ADMIN/', views.HOME_ADMIN, name='HOME_ADMIN'),
