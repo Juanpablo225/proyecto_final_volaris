@@ -2,11 +2,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <link rel="icon" href="{% static 'ICONS/logo_sae.ico' %}">
+    <link rel="icon" href="{% static 'ICONS/logo_sae.ico' %}">
     <meta charset="UTF-8">
-    <title>buscar admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda Archivos Administración</title>
+    <link rel="stylesheet" href="{% static 'css/styles_SEARCH.css' %}">
 </head>
 <body>
+    <!-- 🔵 Barra azul superior con el logo y el título -->
+    <header class="navbar">
+        <!-- Menú desplegable a la izquierda -->
+        <div class="menu-container">
+            <button class="menu-icon" onclick="toggleMenu()">&#9776;</button>
+            <div class="dropdown-menu" id="dropdown-menu">
+                <a href="{% url 'UPLOAD_ADMIN' %}">Subir</a>
+                <a href="{% url 'SEARCH_ADMIN' %}">Buscar</a>
+                <a href="#">Editar usuarios</a>
+                <a href="{% url 'index' %}">Salir</a>
+            </div>
+        </div>
+
+        <img src="{% static 'ICONS/logo_sae.ico' %}" alt="Logo Sae" class="logo">
+
+    </header>
+    <h1>Búsqueda de Archivos</h1>
+
+    <main>
+        <div class="background"></div>
+        <div class="Tabla">
+            <!-- Implementación de la tabla -->
+            <table>
+                <thead>
+                    <tr>
+                        <th># Guía</th>
+                        <th>Fecha y Hora de Subida</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>2025-04-01 10:30 AM</td>
+                        <td>
+                            <button class="action-button" onclick="selectFile()">Seleccionar archivo</button>
+                            <a href="#" class="action-button" download="archivo1.pdf">Descargar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>2025-04-02 12:00 PM</td>
+                        <td>
+                            <button class="action-button" onclick="selectFile()">Seleccionar archivo</button>
+                            <a href="#" class="action-button" download="archivo2.pdf">Descargar</a>
+                        </td>
+                    </tr>
+                    <!-- Puedes agregar más filas según sea necesario -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- 🔵 Barra azul inferior con los enlaces -->
+    <footer class="navbar">
+        <div class="nav-links">
+            <a href="#">Soporte</a>
+            <a href="https://www.youtube.com/watch?v=YW4DbwujexU">Tutorial</a>
+            <a href="#">copy@</a>
+        </div>
+    </footer>
+
+    <script>
+        // Función para mostrar y ocultar el menú desplegable
+        function toggleMenu() {
+            const menu = document.getElementById('dropdown-menu');
+            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
 
 </body>
+
+
+
 </html>
