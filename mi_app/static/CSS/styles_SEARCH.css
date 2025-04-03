@@ -1,0 +1,149 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+
+/* 🔵 Barra azul superior e inferior */
+.navbar {
+    background-color: #0A284E;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center; /* Centra el logo */
+    align-items: center;
+}
+
+/* Contenedor del menú a la izquierda */
+.menu-container {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.menu-icon {
+    background-color: #0A284E;
+    color: white;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    background-color: #0A284E;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 30px;
+    font-size: 16px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #053395;
+}
+
+/* Contenedor del logo y título */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+
+/* Estilos para el logo */
+.logo {
+    display: block;
+    height: 60px;
+    width: auto;
+}
+
+/* 🔷 Estilo del contenido principal */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+}
+/*TABLA*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+table th {
+    background-color: #0A284E;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.action-button {
+    background-color: #0A284E;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.action-button:hover {
+    background-color: #053395;
+}
+/*TABLA*/
+
+/* 🔵 Barra azul inferior con los enlaces */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    margin-top: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
