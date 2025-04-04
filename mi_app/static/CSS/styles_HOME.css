@@ -58,12 +58,37 @@ body {
     color: white;
     text-decoration: none;
     display: block;
-    padding: 30px;
+    padding: 10px;
     font-size: 16px;
 }
 
 .dropdown-menu a:hover {
     background-color: #053395;
+}
+
+/* Menú de perfil en la parte superior derecha, ajustado más a la izquierda */
+.profile-menu-container {
+    position: absolute;
+    right: 60px; /* Movido más a la izquierda */
+    top: 20px;
+}
+
+.profile-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-icon img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+/* Menú desplegable de perfil ajustado hacia la izquierda */
+.profile-menu-container .dropdown-menu {
+    right: auto;
+    left: -100px; /* Se despliega hacia la izquierda */
 }
 
 /* Contenedor del logo y título */
@@ -92,24 +117,7 @@ main {
     padding: 20px;
     width: 100%;
 }
-<!-- implementaciondelatabla -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--impelemaciontabla -->
 /* 🔵 Barra azul inferior con los enlaces */
 .nav-links {
     display: flex;

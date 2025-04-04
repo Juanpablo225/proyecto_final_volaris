@@ -11,8 +11,8 @@
 <body>
     <!-- 🔵 Barra azul superior con el logo y el título -->
     <header class="navbar">
-        <img src="{% static 'ICONS/logo_sae.ico' %}" alt="Logo Sae" class="logo">
-        <h1>Bienvenido a SAE</h1>
+        <img src="{% static 'ICONS/logoo.png' %}" alt="Logo Sae" class="logo">
+        <h1>Bienvenido  </h1>
     </header>
 
     <main>
@@ -22,7 +22,7 @@
 
             <form action="{% url 'index' %}" method="POST">
                 {% csrf_token %}
-                <input type="text" name="username" placeholder="ingrese su usuario o correo" required>
+                <input type="text" name="username" placeholder="ingrese  su correo" required>
 
                 <div class="password-field">
                     <input type="password" id="password" name="password" placeholder="Contraseña" required>
@@ -34,7 +34,7 @@
                 </button>
             </form>
 
-            <a href="{% url 'RECOVERY' %}">Recupear Contraseña</a>
+            <a href="{% url 'RECOVERY' %}">Recuperar Contraseña</a>
 
             <!-- Mostrar mensajes de error si los hay -->
             {% if messages %}

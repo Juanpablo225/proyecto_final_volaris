@@ -6,11 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME</title>
-    <!-- Usar la etiqueta static para cargar la hoja de estilo -->
     <link rel="stylesheet" href="{% static 'CSS/styles_HOME.css' %}">
 </head>
 <body>
-    <!-- 🔵 Barra azul superior con el logo y el título -->
     <header class="navbar">
         <!-- Menú desplegable a la izquierda -->
         <div class="menu-container">
@@ -19,26 +17,34 @@
                 <a href="{% url 'UPLOAD_ADMIN' %}">Subir</a>
                 <a href="{% url 'SEARCH_ADMIN' %}">Buscar</a>
                 <a href="#">Editar usuarios</a>
-                <a href="{% url 'index' %}">Salir</a>
             </div>
         </div>
 
-        <img src="{% static 'ICONS/logo_sae.ico' %}" alt="Logo Sae" class="logo">
+        <img src="{% static 'ICONS/logoo.png' %}" alt="Logo Sae" class="logo">
 
+        <!-- Menú desplegable a la derecha con icono de perfil -->
+        <div class="profile-menu-container">
+            <button class="profile-icon" onclick="toggleProfileMenu()">
+                <img src="{% static 'ICONS/user_2.ico' %}" alt="Perfil">
+            </button>
+            <div class="dropdown-menu" id="profile-menu">
+                <a href="#">Mi Perfil</a>
+                <a href="#">Configuración</a>
+                <a href="{% url 'index' %}">Cerrar Sesión</a>
+            </div>
+        </div>
     </header>
-<h1>Bienvenido ...</h1>
 
 
 
+    <h1>Bienvenido ...</h1>
 
     <main>
         <div class="background"></div>
         <div class="Tabla">
-          <!-- implementacion de la tabla -->
         </div>
     </main>
 
-    <!-- 🔵 Barra azul inferior con los enlaces -->
     <footer class="navbar">
         <div class="nav-links">
             <a href="#">Soporte</a>
@@ -48,10 +54,14 @@
     </footer>
 
     <script>
-        // Función para mostrar y ocultar el menú desplegable
         function toggleMenu() {
             const menu = document.getElementById('dropdown-menu');
             menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        }
+
+        function toggleProfileMenu() {
+            const profileMenu = document.getElementById('profile-menu');
+            profileMenu.style.display = (profileMenu.style.display === 'block') ? 'none' : 'block';
         }
     </script>
 </body>
