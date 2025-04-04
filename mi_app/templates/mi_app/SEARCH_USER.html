@@ -2,11 +2,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <link rel="icon" href="{% static 'ICONS/logo_sae.ico' %}">
+    <link rel="icon" href="{% static 'ICONS/logo_sae_blanco.ico' %}">
     <meta charset="UTF-8">
-    <title>buscar usuario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda Archivos Usuarios</title>
+    <link rel="stylesheet" href="{% static 'css/styles_SEARCH.css' %}">
 </head>
 <body>
+    <!-- 🔵 Barra azul superior con el logo y el título -->
+    <header class="navbar">
+        <!-- Menú desplegable a la izquierda -->
+        <div class="menu-container">
+            <button class="menu-icon" onclick="toggleMenu()">&#9776;</button>
+            <div class="dropdown-menu" id="dropdown-menu">
+                <a href="{% url 'UPLOAD_USER' %}">Subir</a>
+                <a href="{% url 'SEARCH_USER' %}">Buscar</a>
+                <a href="{% url 'index' %}">Salir</a>
+            </div>
+        </div>
+
+        <img src="{% static 'ICONS/logo_sae_blanco.ico' %}" alt="Logo Sae" class="logo">
+
+    </header>
+    <h1>Búsqueda de Archivos</h1>
+
+    <main>
+        <div class="background"></div>
+        <div class="Tabla">
+            <!-- Botón para seleccionar/desmarcar todos los archivos -->
+            <button id="select-all-button" class="action-button" onclick="selectAllFiles()">Seleccionar Todos</button>
+
+            <!-- Botón para descargar todos los archivos seleccionados -->
+            <button id="download-selected-button" class="action-button" onclick="downloadSelectedFiles()">Descargar Seleccionados</button>
+
+            <!-- Implementación de la tabla -->
+            <table>
+                <thead>
+                    <tr>
+                        <th># Guía</th>
+                        <th>Fecha y Hora de Subida</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>2025-04-01 10:30 AM</td>
+                        <td>
+                            <input type="checkbox" class="file-checkbox" id="file-001" data-file="archivo1.pdf">
+                            <a href="#" class="action-button" download="archivo1.pdf">Descargar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>2025-04-02 12:00 PM</td>
+                        <td>
+                            <input type="checkbox" class="file-checkbox" id="file-002" data-file="archivo2.pdf">
+                            <a href="#" class="action-button" download="archivo2.pdf">Descargar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- 🔵 Barra azul inferior con los enlaces -->
+    <footer class="navbar">
+        <div class="nav-links">
+            <a href="#">Soporte</a>
+            <a href="https://www.youtube.com/watch?v=YW4DbwujexU">Tutorial</a>
+            <a href="#">copy@</a>
+        </div>
+    </footer>
+
+    <script>
+        // Función para mostrar y ocultar el menú desplegable
+        function toggleMenu() {
+            const menu = document.getElementById('dropdown-menu');
+            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        }
+
+        // Función para seleccionar o desmarcar todas las casillas
+        function selectAllFiles() {
+            const checkboxes = document.querySelectorAll('.file-checkbox');
+            const selectAllButton = document.getElementById('select-all-button');
+            const isChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+
+            checkboxes.forEach(function(checkbox) {
+                checkbox.checked = !isChecked;
+            });
+
+            if (isChecked) {
+                selectAllButton.textContent = "Seleccionar Todos";
+            } else {
+                selectAllButton.textContent = "Deseleccionar Todos";
+            }
+        }
+
+        // Función para descargar los archivos seleccionados
+        function downloadSelectedFiles() {
+            const checkboxes = document.querySelectorAll('.file-checkbox:checked');
+            if (checkboxes.length === 0) {
+                alert("No has seleccionado ningún archivo.");
+                return;
+            }
+
+            checkboxes.forEach(function(checkbox) {
+                const fileName = checkbox.getAttribute('data-file');
+                const link = document.createElement('a');
+                link.href = fileName; // Asumimos que los archivos están en la misma ruta
+                link.download = fileName; // Establece el nombre del archivo para la descarga
+                link.click(); // Inicia la descarga
+            });
+        }
+
+    </script>
 
 </body>
 </html>
