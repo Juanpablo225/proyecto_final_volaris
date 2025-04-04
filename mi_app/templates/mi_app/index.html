@@ -22,7 +22,7 @@
 
             <form action="{% url 'index' %}" method="POST">
                 {% csrf_token %}
-                <input type="text" name="username" placeholder="ingrese su usuario o correo" required>
+                <input type="text" name="username" placeholder="Ingrese su usuario o correo" required>
 
                 <div class="password-field">
                     <input type="password" id="password" name="password" placeholder="Contraseña" required>
@@ -34,7 +34,7 @@
                 </button>
             </form>
 
-            <a href="{% url 'RECOVERY' %}">Recupear Contraseña</a>
+            <a href="{% url 'RECOVERY' %}">Recuperar Contraseña</a>
 
             <!-- Mostrar mensajes de error si los hay -->
             {% if messages %}
@@ -61,7 +61,7 @@
         document.getElementById('toggle-password').addEventListener('click', function () {
             const passwordField = document.getElementById('password');
             passwordField.type = passwordField.type === 'password' ? 'text' : 'password';
-            this.textContent = passwordField.type === 'password' ? '👁' : '🙈';
+            this.textContent = passwordField.type === 'password' ? '👁' : '👁';
         });
     </script>
 </body>

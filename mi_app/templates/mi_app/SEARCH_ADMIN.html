@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="icon" href="{% static 'ICONS/logo_sae.ico' %}">
     <meta charset="UTF-8">
@@ -8,6 +9,7 @@
     <title>Búsqueda Archivos Administración</title>
     <link rel="stylesheet" href="{% static 'css/styles_SEARCH.css' %}">
 </head>
+
 <body>
     <!-- 🔵 Barra azul superior con el logo y el título -->
     <header class="navbar">
@@ -30,6 +32,12 @@
     <main>
         <div class="background"></div>
         <div class="Tabla">
+            <!-- Botón para seleccionar/desmarcar todos los archivos -->
+            <button id="select-all-button" class="action-button" onclick="selectAllFiles()">Seleccionar Todos</button>
+
+            <!-- Botón para descargar todos los archivos seleccionados -->
+            <button id="download-selected-button" class="action-button" onclick="downloadSelectedFiles()">Descargar Seleccionados</button>
+
             <!-- Implementación de la tabla -->
             <table>
                 <thead>
@@ -44,7 +52,7 @@
                         <td>001</td>
                         <td>2025-04-01 10:30 AM</td>
                         <td>
-                            <button class="action-button" onclick="selectFile()">Seleccionar archivo</button>
+                            <input type="checkbox" class="file-checkbox" id="file-001" data-file="archivo1.pdf">
                             <a href="#" class="action-button" download="archivo1.pdf">Descargar</a>
                         </td>
                     </tr>
@@ -52,11 +60,10 @@
                         <td>002</td>
                         <td>2025-04-02 12:00 PM</td>
                         <td>
-                            <button class="action-button" onclick="selectFile()">Seleccionar archivo</button>
+                            <input type="checkbox" class="file-checkbox" id="file-002" data-file="archivo2.pdf">
                             <a href="#" class="action-button" download="archivo2.pdf">Descargar</a>
                         </td>
                     </tr>
-                    <!-- Puedes agregar más filas según sea necesario -->
                 </tbody>
             </table>
         </div>
@@ -77,10 +84,43 @@
             const menu = document.getElementById('dropdown-menu');
             menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
         }
+
+        // Función para seleccionar o desmarcar todas las casillas
+        function selectAllFiles() {
+            const checkboxes = document.querySelectorAll('.file-checkbox');
+            const selectAllButton = document.getElementById('select-all-button');
+            const isChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+
+            checkboxes.forEach(function(checkbox) {
+                checkbox.checked = !isChecked;
+            });
+
+            if (isChecked) {
+                selectAllButton.textContent = "Seleccionar Todos";
+            } else {
+                selectAllButton.textContent = "Deseleccionar Todos";
+            }
+        }
+
+        // Función para descargar los archivos seleccionados
+        function downloadSelectedFiles() {
+            const checkboxes = document.querySelectorAll('.file-checkbox:checked');
+            if (checkboxes.length === 0) {
+                alert("No has seleccionado ningún archivo.");
+                return;
+            }
+
+            checkboxes.forEach(function(checkbox) {
+                const fileName = checkbox.getAttribute('data-file');
+                const link = document.createElement('a');
+                link.href = fileName; // Asumimos que los archivos están en la misma ruta
+                link.download = fileName; // Establece el nombre del archivo para la descarga
+                link.click(); // Inicia la descarga
+            });
+        }
+
     </script>
 
 </body>
-
-
 
 </html>

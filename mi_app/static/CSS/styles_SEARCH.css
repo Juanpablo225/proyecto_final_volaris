@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -100,9 +99,9 @@ table {
 }
 
 table th, table td {
-    padding: 10px;
+    padding: 10px 15px;
     text-align: center;
-    border: 1px solid black;
+    border: 2px solid black;
 }
 
 table th {
@@ -117,7 +116,8 @@ table tr:nth-child(even) {
 .action-button {
     background-color: #0A284E;
     color: white;
-    padding: 10px 15px;
+    padding: 6px 10px;
+    font-size: 11px;
     text-decoration: none;
     border: none;
     cursor: pointer;
@@ -125,6 +125,16 @@ table tr:nth-child(even) {
 }
 
 .action-button:hover {
+    background-color: #053395;
+}
+
+.file-checkbox {
+    margin-right: 15px;
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+.file-checkbox:checked {
     background-color: #053395;
 }
 /*TABLA*/
@@ -146,4 +156,34 @@ table tr:nth-child(even) {
 
 .nav-links a:hover {
     text-decoration: underline;
+}
+
+#select-all-button {
+    margin-bottom: 20px;
+    padding: 8px 15px;
+    font-size: 14px;
+    background-color: #0A284E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#select-all-button:hover {
+    background-color: #053395;
+}
+
+#download-selected-button {
+    margin-bottom: 20px;
+    padding: 8px 15px;
+    font-size: 14px;
+    background-color: #0A284E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#download-selected-button:hover {
+    background-color: #053395;
 }
