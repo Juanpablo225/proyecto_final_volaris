@@ -19,7 +19,7 @@ body {
 .navbar {
     background-color: #0A284E;
     color: white;
-    padding: 30px 0;
+    padding: 15px 0; /* Reducido de 30px a 15px para hacer la barra más delgada */
     text-align: center;
     width: 100%;
     position: relative;
@@ -32,7 +32,7 @@ body {
 .menu-container {
     position: absolute;
     left: 20px;
-    top: 20px;
+    top: 15px; /* Ajustado para la nueva altura de la barra */
 }
 
 .menu-icon {
@@ -47,7 +47,7 @@ body {
     display: none;
     background-color: #0A284E;
     position: absolute;
-    top: 60px;
+    top: 50px;
     left: 0;
     padding: 10px;
     border-radius: 5px;
@@ -70,7 +70,7 @@ body {
 .profile-menu-container {
     position: absolute;
     right: 60px; /* Movido más a la izquierda */
-    top: 20px;
+    top: 15px; /* Ajustado para la nueva altura de la barra */
 }
 
 .profile-icon {
@@ -80,8 +80,8 @@ body {
 }
 
 .profile-icon img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
 }
 
@@ -103,25 +103,9 @@ body {
 /* Estilos para el logo */
 .logo {
     display: block;
-    height: 60px;
+    height: 50px; /* Ajustado para mantener proporción con la barra */
     width: auto;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Estilos para el contenido principal */
 main {
@@ -181,6 +165,8 @@ p {
     margin-top: 15px;
     text-align: left;
     list-style: none;
+    max-height: 100px; /* Se establece un límite para activar scroll */
+    overflow-y: auto;
 }
 
 #fileList li {
@@ -218,6 +204,7 @@ footer.navbar {
     left: 0;
     width: 100%;
     text-align: center;
+    padding: 15px 0; /* Reducido de 30px a 15px para hacer la barra más delgada */
 }
 
 .nav-links {

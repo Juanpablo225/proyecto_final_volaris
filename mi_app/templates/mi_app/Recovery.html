@@ -20,38 +20,39 @@
 
     <!-- Formulario de recuperación de contraseña -->
     <div class="login-form">
-        <h2>Ingresa tu Correro Electronico</h2>
+        <h2>Ingresa tu Correo Electrónico</h2>
 
         <form method="POST">
             {% csrf_token %}
 
             <!-- Campo para el correo electrónico -->
-
             <input type="email" name="email" id="email" placeholder="correoejemplo@gmail.com" required>
 
+            <!-- Contenedor de botones alineados -->
             <div class="button-container">
                 <a href="{% url 'index' %}">
-                    <button type="button" class="btn-cancel-email">
+                    <button type="button" class="btn-cancel-email btn-uniform">
                         Cancelar
                     </button>
                 </a>
-                <button type="submit" class="btn-mail">
-                    Enviar
-                </button>
+               <a href="#">
+                    <button type="button" class="btn-mail btn-uniform">
+                        Enviar
+                    </button>
+                </a>
             </div>
         </form>
     </div>
-
-
 </main>
-   <!-- 🔵 Barra azul inferior con los enlaces -->
-    <footer class="navbar">
-        <div class="nav-links">
-            <a href="#">Soporte</a>
-            <a href="https://www.youtube.com/watch?v=YW4DbwujexU">Tutorial</a>
-            <a href="#">copy@</a>
-        </div>
-    </footer>
+
+<!-- Barra azul inferior con enlaces -->
+<footer class="navbar">
+    <div class="nav-links">
+        <a href="#">Soporte</a>
+        <a href="https://www.youtube.com/watch?v=YW4DbwujexU">Tutorial</a>
+        <a href="#">copy@</a>
+    </div>
+</footer>
 
 </body>
 </html>
