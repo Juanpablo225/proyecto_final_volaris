@@ -6,23 +6,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="{% static 'css/styles_Login.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/styles_Login.css' %}">
 </head>
 <body>
     <!-- 🔵 Barra azul superior con el logo y el título -->
     <header class="navbar">
-        <img src="{% static 'ICONS/logo_sae.ico' %}" alt="Logo Sae" class="logo">
-        <h1>Bienvenido a SAE</h1>
+        <img src="{% static 'ICONS/logoo.png' %}" alt="Logo Sae" class="logo">
+        <h1>Bienvenido</h1>
     </header>
 
     <main>
         <div class="background"></div>
         <div class="login-form">
-            <h2>Inicia sesión</h2>
+            <h2>Iniciar Sesión</h2>
 
             <form action="{% url 'index' %}" method="POST">
                 {% csrf_token %}
-                <input type="text" name="username" placeholder="Ingrese su usuario o correo" required>
+                <input type="text" name="username" placeholder="Usuario" required>
 
                 <div class="password-field">
                     <input type="password" id="password" name="password" placeholder="Contraseña" required>
@@ -46,13 +46,13 @@
             {% endif %}
         </div>
     </main>
-
+       <!-- 🔵 Barra azul inferior con los enlaces -->
     <!-- 🔵 Barra azul inferior con los enlaces -->
     <footer class="navbar">
         <div class="nav-links">
-            <a href="#">Soporte</a>
+            <a href="#">Soporte Técnico</a>
             <a href="https://www.youtube.com/watch?v=YW4DbwujexU">Tutorial</a>
-            <a href="#">copy@</a>
+            <a href="#">Copyright SAE S.T.@2025</a>
         </div>
     </footer>
 
@@ -61,7 +61,7 @@
         document.getElementById('toggle-password').addEventListener('click', function () {
             const passwordField = document.getElementById('password');
             passwordField.type = passwordField.type === 'password' ? 'text' : 'password';
-            this.textContent = passwordField.type === 'password' ? '👁' : '👁';
+            this.textContent = passwordField.type === 'password' ? '👁' : '🙈';
         });
     </script>
 </body>
