@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +19,7 @@ body {
 .navbar {
     background-color: #0A284E;
     color: white;
-    padding: 30px 0;
+    padding: 15px 0;
     text-align: center;
     width: 100%;
     position: relative;
@@ -31,7 +32,7 @@ body {
 .menu-container {
     position: absolute;
     left: 20px;
-    top: 20px;
+    top: 15px;
 }
 
 .menu-icon {
@@ -57,13 +58,52 @@ body {
     color: white;
     text-decoration: none;
     display: block;
-    padding: 30px;
+    padding: 10px;
     font-size: 16px;
 }
 
 .dropdown-menu a:hover {
     background-color: #053395;
 }
+
+
+
+
+
+
+/* Menú de perfil en la parte superior derecha, ajustado más a la izquierda */
+.profile-menu-container {
+    position: absolute;
+    right: 90px; /* Movido más a la izquierda */
+    top: 20px;
+}
+
+.profile-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-icon img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+/* Menú desplegable de perfil ajustado hacia la izquierda */
+.profile-menu-container .dropdown-menu {
+    right: auto;
+    left: -90px; /* Se despliega hacia la izquierda */
+}
+
+
+
+
+
+
+
+
+
 
 /* Contenedor del logo y título */
 .logo-container {
@@ -91,6 +131,8 @@ main {
     padding: 20px;
     width: 100%;
 }
+
+
 /*TABLA*/
 table {
     width: 100%;
@@ -139,51 +181,117 @@ table tr:nth-child(even) {
 }
 /*TABLA*/
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 🔵 Barra azul inferior con los enlaces */
+/* 🔵 Barra azul inferior */
+footer.navbar {
+    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0; /* Reducido de 30px a 15px para hacer la barra más delgada */
+}
+
 .nav-links {
     display: flex;
     justify-content: center;
     gap: 90px;
-    margin-top: 20px;
+    padding: 10px 0;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
     font-size: 16px;
-    margin: 0 10px;
 }
 
 .nav-links a:hover {
     text-decoration: underline;
-}
-
-#select-all-button {
-    margin-bottom: 20px;
-    padding: 8px 15px;
-    font-size: 14px;
-    background-color: #0A284E;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#select-all-button:hover {
-    background-color: #053395;
-}
-
-#download-selected-button {
-    margin-bottom: 20px;
-    padding: 8px 15px;
-    font-size: 14px;
-    background-color: #0A284E;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#download-selected-button:hover {
-    background-color: #053395;
 }

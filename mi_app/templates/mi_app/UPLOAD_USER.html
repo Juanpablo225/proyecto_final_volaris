@@ -2,34 +2,79 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="icon" href="{% static 'ICONS/logo_sae.ico' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subir Archivos</title>
-
+    <title>SAE Respaldo - Subir Archivos</title>
     <link rel="stylesheet" href="{% static 'CSS/styles_UPLOAD.css' %}">
 </head>
 <body>
 
-    <header>
-        <h1>UPLOAD</h1>
+    <header class="navbar">
+        <!-- Menú desplegable a la izquierda -->
+        <div class="menu-container">
+            <button class="menu-icon" onclick="toggleMenu()">&#9776;</button>
+            <div class="dropdown-menu" id="dropdown-menu">
+                <a href="{% url 'HOME_USER' %}">Inicio</a>
+                <a href="{% url 'SEARCH_USER' %}">Buscar</a>
+
+
+            </div>
+        </div>
+
+        <img src="{% static 'ICONS/logoo.png' %}" alt="Logo Sae" class="logo">
+
+        <!-- Menú desplegable a la derecha con icono de perfil -->
+        <div class="profile-menu-container">
+            <button class="profile-icon" onclick="toggleProfileMenu()">
+                <img src="{% static 'ICONS/user.ico' %}" alt="Perfil">
+            </button>
+            <div class="dropdown-menu" id="profile-menu">
+                <a href="#">Mi Perfil</a>
+                <a href="#">Configuración</a>
+                <a href="{% url 'index' %}">Cerrar Sesión</a>
+            </div>
+        </div>
     </header>
+
 
     <main>
         <div class="upload-container">
-            <label for="fileInput" class="upload-button">Select PDF file</label>
+            <label for="fileInput" class="upload-button">Seleccionar PDF</label>
             <input type="file" id="fileInput" multiple hidden>
-            <p>or drag and drop the PDF here</p>
+            <p>Ó arrastra y suelta un PDF</p>
 
-            <div id="dropZone">Drop files here</div>
+            <div id="dropZone">Suelta el archivo aquí</div>
 
             <ul id="fileList"></ul>
         </div>
     </main>
 
+    <footer class="navbar">
+        <div class="nav-links">
+            <a href="#">Soporte Técnico</a>
+            <a href="https://www.youtube.com/watch?v=YW4DbwujexU">Tutorial</a>
+            <a href="#">Copyright SAE S.T@2025</a>
+        </div>
+    </footer>
 
 
-<script src="{% static 'JS/index.js' %}"></script>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('dropdown-menu');
+            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        }
+
+        function toggleProfileMenu() {
+            const profileMenu = document.getElementById('profile-menu');
+            profileMenu.style.display = (profileMenu.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
+
+
+    <!-- Conexión con el archivo JavaScript -->
+    <script src="{% static 'JS/index.js' %}"></script>
 
 </body>
-
 </html>

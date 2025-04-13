@@ -1,15 +1,13 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <link rel="icon" href="{% static 'ICONS/logo_sae_blanco.ico' %}">
+    <link rel="icon" href="{% static 'ICONS/logo_sae.ico' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Búsqueda Archivos Administrador</title>
-    <link rel="stylesheet" href="{% static 'css/styles_SEARCH.css' %}">
+    <title>SAE Respaldo - Búsqueda Archivos</title>
+    <link rel="stylesheet" href="{% static 'CSS/styles_SEARCH.css' %}">
 </head>
-
 <body>
     <!-- 🔵 Barra azul superior con el logo y el título -->
     <header class="navbar">
@@ -17,14 +15,28 @@
         <div class="menu-container">
             <button class="menu-icon" onclick="toggleMenu()">&#9776;</button>
             <div class="dropdown-menu" id="dropdown-menu">
+                <a href="{% url 'HOME_ADMIN' %}">Inicio</a>
                 <a href="{% url 'UPLOAD_ADMIN' %}">Subir</a>
-                <a href="{% url 'SEARCH_ADMIN' %}">Buscar</a>
-                <a href="#">Editar usuarios</a>
-                <a href="{% url 'index' %}">Salir</a>
+                <a href="#">Editar Usuarios</a>
+
             </div>
         </div>
 
-        <img src="{% static 'ICONS/logo_sae_blanco.ico' %}" alt="Logo Sae" class="logo">
+        <img src="{% static 'ICONS/logoo.png' %}" alt="Logo Sae" class="logo">
+
+        <!-- Menú desplegable a la derecha con icono de perfil -->
+        <div class="profile-menu-container">
+            <button class="profile-icon" onclick="toggleProfileMenu()">
+                <img src="{% static 'ICONS/user.ico' %}" alt="Perfil">
+            </button>
+            <div class="dropdown-menu" id="profile-menu">
+                <a href="#">Mi Perfil</a>
+                <a href="#">Configuración</a>
+                <a href="{% url 'index' %}">Cerrar Sesión</a>
+            </div>
+        </div>
+
+
 
     </header>
     <h1>Búsqueda de Archivos</h1>
@@ -64,6 +76,24 @@
                             <a href="#" class="action-button" download="archivo2.pdf">Descargar</a>
                         </td>
                     </tr>
+                                       <tr>
+                        <td>001</td>
+                        <td>2025-04-01 10:30 AM</td>
+                        <td>
+                            <input type="checkbox" class="file-checkbox" id="file-001" data-file="archivo1.pdf">
+                            <a href="#" class="action-button" download="archivo1.pdf">Descargar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>2025-04-02 12:00 PM</td>
+                        <td>
+                            <input type="checkbox" class="file-checkbox" id="file-002" data-file="archivo2.pdf">
+                            <a href="#" class="action-button" download="archivo2.pdf">Descargar</a>
+                        </td>
+                    </tr>
+
+
                 </tbody>
             </table>
         </div>
@@ -72,17 +102,23 @@
     <!-- 🔵 Barra azul inferior con los enlaces -->
     <footer class="navbar">
         <div class="nav-links">
-            <a href="#">Soporte</a>
+            <a href="#">Soporte Técnico</a>
             <a href="https://www.youtube.com/watch?v=YW4DbwujexU">Tutorial</a>
-            <a href="#">copy@</a>
+            <a href="#">Copyright SAE S.T@2025</a>
         </div>
     </footer>
 
-    <script>
+
+<script>
         // Función para mostrar y ocultar el menú desplegable
         function toggleMenu() {
             const menu = document.getElementById('dropdown-menu');
             menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        }
+
+        function toggleProfileMenu() {
+            const profileMenu = document.getElementById('profile-menu');
+            profileMenu.style.display = (profileMenu.style.display === 'block') ? 'none' : 'block';
         }
 
         // Función para seleccionar o desmarcar todas las casillas
@@ -118,9 +154,7 @@
                 link.click(); // Inicia la descarga
             });
         }
-
     </script>
 
 </body>
-
 </html>

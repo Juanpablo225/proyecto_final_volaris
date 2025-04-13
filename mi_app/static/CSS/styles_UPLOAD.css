@@ -1,23 +1,121 @@
-/* Reset de estilos */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+
+/* 🔵 Barra azul superior e inferior */
+.navbar {
+    background-color: #0A284E;
+    color: white;
+    padding: 15px 0; /* Reducido de 30px a 15px para hacer la barra más delgada */
+    text-align: center;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center; /* Centra el logo */
+    align-items: center;
+}
+
+/* Contenedor del menú a la izquierda */
+.menu-container {
+    position: absolute;
+    left: 20px;
+    top: 15px; /* Ajustado para la nueva altura de la barra */
+}
+
+.menu-icon {
+    background-color: #0A284E;
+    color: white;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    background-color: #0A284E;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #053395;
+}
+
+/* Menú de perfil en la parte superior derecha, ajustado más a la izquierda */
+.profile-menu-container {
+    position: absolute;
+    right: 60px; /* Movido más a la izquierda */
+    top: 15px; /* Ajustado para la nueva altura de la barra */
+}
+
+.profile-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-icon img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Menú desplegable de perfil ajustado hacia la izquierda */
+.profile-menu-container .dropdown-menu {
+    right: auto;
+    left: -100px; /* Se despliega hacia la izquierda */
+}
+
+/* Contenedor del logo y título */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+
+/* Estilos para el logo */
+.logo {
+    display: block;
+    height: 50px; /* Ajustado para mantener proporción con la barra */
+    width: auto;
+}
+
+/* Estilos para el contenido principal */
+main {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    background-color: #f5f5f5;
-}
-
-header {
-    text-align: center;
-    margin-bottom: 20px;
+    padding: 20px;
+    width: 100%;
 }
 
 .upload-container {
@@ -67,17 +165,10 @@ p {
     margin-top: 15px;
     text-align: left;
     list-style: none;
+    max-height: 100px; /* Se establece un límite para activar scroll */
+    overflow-y: auto;
 }
 
-#fileList li {
-    background: #e8f5e9;
-    color: #2e7d32;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
-    font-size: 14px;
-}
-/* Estilos para los elementos de la lista de archivos */
 #fileList li {
     background: #e8f5e9;
     color: #2e7d32;
@@ -90,7 +181,6 @@ p {
     align-items: center;
 }
 
-/* Estilo para el botón de eliminar */
 .delete-btn {
     background-color: #e53935;
     color: white;
@@ -104,4 +194,32 @@ p {
 
 .delete-btn:hover {
     background-color: #c62828;
+}
+
+/* 🔵 Barra azul inferior */
+footer.navbar {
+    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0; /* Reducido de 30px a 15px para hacer la barra más delgada */
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    padding: 10px 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
 }
