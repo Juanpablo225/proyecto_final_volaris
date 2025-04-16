@@ -1,7 +1,12 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+html, body {
+    overflow: hidden;
+    height: 100%;
 }
 
 body {
@@ -14,6 +19,66 @@ body {
     background-color: #f4f4f4;
 }
 
+/*Modal */
+.modal {
+    display: none;
+    position: fixed; /* Lo fija en la pantalla */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Lo centra exactamente */
+    z-index: 10000;
+}
+
+.modal-contenido {
+    background-color: white;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: left;
+    box-shadow: 0px 0px 10px #000;
+}
+
+.cerrar {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-contenido h2 {
+    margin-bottom: 20px;
+    color: #0A284E;
+}
+
+.modal-contenido input,
+.modal-contenido select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-contenido button {
+    background-color: #0A284E;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-contenido button:hover {
+    background-color: #053395;
+}
+
+.modal-contenido input[type="file"] {
+    border: none;
+    margin-bottom: 20px;
+}
+
+
 /* 🔵 Barra azul superior e inferior */
 .navbar {
     background-color: #0A284E;
@@ -23,15 +88,20 @@ body {
     width: 100%;
     position: relative;
     display: flex;
-    justify-content: center; /* Centra el logo */
     align-items: center;
+
+}
+.navbar .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 70px;
 }
 
 /* Contenedor del menú a la izquierda */
 .menu-container {
     position: absolute;
     left: 20px;
-    top: 15px;
+    margin-top: 0px;
 }
 
 .menu-icon {
@@ -65,6 +135,29 @@ body {
     background-color: #053395;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Menú de perfil en la parte superior derecha, ajustado más a la izquierda */
 .profile-menu-container {
     position: absolute;
@@ -90,6 +183,9 @@ body {
     left: -90px; /* Se despliega hacia la izquierda */
 }
 
+
+
+
 /* Contenedor del logo y título */
 .logo-container {
     display: flex;
@@ -104,6 +200,7 @@ body {
     display: block;
     height: 60px;
     width: auto;
+    margin-left:350px;
 }
 
 /* 🔷 Estilo del contenido principal */
@@ -116,8 +213,30 @@ main {
     padding: 20px;
     width: 100%;
 }
+/*Boton de agregar cuentas*/
+.acciones-cuentas {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    padding-right: 180px;
+}
 
-/* TABLA */
+.agregar-cuenta-btn {
+    background-color: #0A284E;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.agregar-cuenta-btn:hover {
+    background-color: #053395;
+}
+
+/*TABLA*/
 table {
     width: 100%;
     border-collapse: collapse;
@@ -163,32 +282,23 @@ table tr:nth-child(even) {
 .file-checkbox:checked {
     background-color: #053395;
 }
-/* TABLA */
-
-/* 🔵 Barra azul inferior con los enlaces */
-footer.navbar {
-    margin-top: auto;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    padding: 15px 0; /* Reducido de 30px a 15px para hacer la barra más delgada */
-}
-
-.nav-links {
+footer .nav-links {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centra horizontalmente */
     gap: 40px; /* Espacio entre los enlaces */
-    padding: 10px 0;
+    width: 100%;
+    padding: 15px 0;
 }
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
+footer .nav-links a {
+    color: white;           /* Texto blanco */
+    text-decoration: none;  /* Sin subrayado */
     font-size: 16px;
+    font-weight: normal;
+    cursor: default;        /* Cursor normal, no de enlace */
 }
 
-.nav-links a:hover {
-    text-decoration: underline;
-}
+
+
+
+

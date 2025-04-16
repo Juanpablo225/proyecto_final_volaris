@@ -1,20 +1,31 @@
 document.addEventListener("DOMContentLoaded", function() {
     const dropZone = document.getElementById("dropZone");
-    const fileInput = document.getElementById("fileInput");
     const fileList = document.getElementById("fileList");
 
-    // Evita el comportamiento por defecto que abre los archivos
-    document.addEventListener("dragover", (event) => event.preventDefault());
-    document.addEventListener("drop", (event) => event.preventDefault());
+    // Eliminar el input de archivos anterior y agregar uno nuevo cada vez
+    function createFileInput() {
+        const fileInput = document.createElement("input");
+        fileInput.type = "file";
+        fileInput.accept = "application/pdf";
+        fileInput.multiple = true;
+        fileInput.style.display = "none";  // Escondido, se activa al hacer click en el botón
+
+        fileInput.addEventListener("change", function(event) {
+            if (event.target.files.length > 0) {
+                handleFiles(event.target.files);
+            }
+        });
+
+        return fileInput;
+    }
+
+    // Crear el input al cargar la página
+    let fileInput = createFileInput();
+    document.body.appendChild(fileInput);
 
     // Cuando el usuario hace clic en el botón, activa el input de archivos
     document.querySelector(".upload-button").addEventListener("click", () => {
         fileInput.click();
-    });
-
-    // Manejar archivos seleccionados manualmente
-    fileInput.addEventListener("change", function(event) {
-        handleFiles(event.target.files);
     });
 
     // Drag and Drop
@@ -29,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     dropZone.addEventListener("drop", function(event) {
         event.preventDefault();
-        event.stopPropagation(); // Evita que se propague el evento y abra el archivo en otra ventana
+        event.stopPropagation();
         dropZone.classList.remove("dragover");
         handleFiles(event.dataTransfer.files);
     });
@@ -44,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             let listItem = document.createElement("li");
-            listItem.classList.add("file-item"); // Clase para cada elemento de la lista
+            listItem.classList.add("file-item");
 
             // Nombre del archivo
             let fileName = document.createElement("span");
@@ -53,10 +64,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Botón de eliminar
             let deleteBtn = document.createElement("button");
-            deleteBtn.textContent = "Delate";
-            deleteBtn.classList.add("delete-btn"); // Clase para el botón de eliminar
+            deleteBtn.textContent = "Eliminar";
+            deleteBtn.classList.add("delete-btn");
             deleteBtn.addEventListener("click", function() {
-                fileList.removeChild(listItem); // Elimina el archivo de la lista
+                fileList.removeChild(listItem);
             });
             listItem.appendChild(deleteBtn);
 
@@ -64,4 +75,3 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
-

@@ -28,19 +28,34 @@ body {
 .navbar .nav-links {
     display: flex;
     justify-content: center;
-    gap: 90px;  /* Aumentar el espacio entre los enlaces */
-    margin-top: 20px;  /* Agregar espacio encima de los enlaces */
+    gap: 40px;
+    width: 100%;
+    padding: 15px 0;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
     font-size: 16px;
-    margin: 0 10px;  /* Añadir margen a la izquierda y derecha de cada enlace */
+    font-weight: normal;
+    cursor: default;
 }
 
-.nav-links a:hover {
-    text-decoration: underline;
+/* 🔷 Enlaces del footer (ajustado para que se vean como en el CSS 1) */
+footer .nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    padding: 15px 0;
+}
+
+footer .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: normal;
+    cursor: default;
 }
 
 /* Estilos para el logo y título dentro de la barra */

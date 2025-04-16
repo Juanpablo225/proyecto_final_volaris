@@ -7,17 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAE Respaldo - Inicio</title>
     <link rel="stylesheet" href="{% static 'CSS/styles_HOME.css' %}">
+
 </head>
 <body>
     <header class="navbar">
         <!-- Menú desplegable a la izquierda -->
         <div class="menu-container">
             <button class="menu-icon" onclick="toggleMenu()">&#9776;</button>
+             <span class="title">casa</span>
             <div class="dropdown-menu" id="dropdown-menu">
                 <a href="{% url 'UPLOAD_ADMIN' %}">Subir</a>
                 <a href="{% url 'SEARCH_ADMIN' %}">Buscar</a>
-                <a href="#">Editar Usuarios</a>
+                <a href="{% url 'Editar_Cuentas' %}">Editar Usuarios</a>
             </div>
+
         </div>
 
         <img src="{% static 'ICONS/logoo.png' %}" alt="Logo Sae" class="logo">

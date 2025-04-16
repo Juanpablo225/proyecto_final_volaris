@@ -189,6 +189,27 @@ main {
     font-size: 14px;
 }
 
+/* 🔷 Estilos para los enlaces en el footer */
+footer .nav-links {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    gap: 40px; /* Espacio entre los enlaces */
+    width: 100%;
+    padding: 15px 0;
+}
+
+footer .nav-links a {
+    color: white;           /* Texto blanco */
+    text-decoration: none;  /* Sin subrayado */
+    font-size: 16px;
+    font-weight: normal;
+    cursor: default;        /* Cursor normal, no de enlace */
+}
+
+footer .nav-links a:hover {
+    text-decoration: underline;
+}
+
 /* 🔷 Media Queries para dispositivos móviles */
 @media (max-width: 480px) {
     .button-container {

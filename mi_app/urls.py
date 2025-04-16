@@ -26,6 +26,7 @@ urlpatterns = [
     path('UPLOAD_USER/', views.UPLOAD_USER, name='UPLOAD_USER'),
 
   #############################################################################################
+    path('Editar_Cuentas/', views.Editar_Cuentas, name='Editar_Cuentas'),
 
-
+###############################################################################################
 ]

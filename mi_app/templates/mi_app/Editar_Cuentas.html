@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="{% static 'ICONS/logo_sae.ico' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAE Respaldo - Editar Cuentas</title>
+    <link rel="stylesheet" href="{% static 'CSS/styles_Editar_Cuentas.css' %}">
+
+
+</head>
+<body>
+    <!-- 🔵 Barra azul superior con el logo y el título -->
+    <header class="navbar">
+        <!-- Menú desplegable a la izquierda -->
+        <div class="menu-container">
+            <button class="menu-icon" onclick="toggleMenu()">&#9776;</button>
+            <div class="dropdown-menu" id="dropdown-menu">
+                <a href="{% url 'HOME_ADMIN' %}">Inicio</a>
+                <a href="{% url 'UPLOAD_ADMIN' %}">Subir</a>
+                <a href="{% url 'SEARCH_ADMIN' %}">Buscar</a>
+
+            </div>
+        </div>
+        <div class="title">Editar Cuentas</div>
+        <img src="{% static 'ICONS/logoo.png' %}" alt="Logo Sae" class="logo">
+
+        <!-- Menú desplegable a la derecha con icono de perfil -->
+        <div class="profile-menu-container">
+            <button class="profile-icon" onclick="toggleProfileMenu()">
+                <img src="{% static 'ICONS/user.ico' %}" alt="Perfil">
+            </button>
+            <div class="dropdown-menu" id="profile-menu">
+                <a href="#">Mi Perfil</a>
+                <a href="#">Configuración</a>
+                <a href="{% url 'index' %}">Cerrar Sesión</a>
+            </div>
+        </div>
+
+
+
+    </header>
+
+    <!--modal para mostrar formulario al darle click en agregar cuentas-->
+    <div id="modal-agregar" class="modal">
+      <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarModal()">&times;</span>
+        <h2>Agregar Nueva Cuenta</h2>
+        <form method="POST" enctype="multipart/form-data">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required><br>
+
+          <label for="correo">Correo Electrónico:</label>
+          <input type="email" id="correo" name="correo" required><br>
+
+          <label for="puesto">Puesto:</label>
+          <select id="puesto" name="puesto" required>
+              <option value="--Seleccionar--">--Seleccionar--</option>
+              <option value="Subdirector/a">Subdirector/a</option>
+              <option value="Gerente">Gerente</option>
+              <option value="Supervisor/a">Supervisor/a</option>
+              <option value="Mostrador">Mostrador</option>
+          </select><br>
+          <label for="rol">Rol:</label>
+          <select id="rol" name="rol" required>
+            <option value="Usuario">Usuario</option>
+            <option value="SuperUsuario">SuperUsuario</option>
+          </select><br>
+
+          <label for="foto">Foto de perfil:</label>
+          <input type="file" id="foto" name="foto" accept="image/*"><br>
+
+          <button type="submit">Guardar</button>
+        </form>
+      </div>
+    </div>
+
+    <main>
+        <div class="acciones-cuentas">
+           <button class="agregar-cuenta-btn">Agregar Cuenta</button>
+        </div>
+
+        <div class="background"></div>
+        <div class="Tabla">
+            <!-- Implementación de la tabla -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo electronico</th>
+                        <th>Puesto</th>
+                        <th>Rol</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Bugarin Vargas Jose Concepcion</td>
+                        <td>bugarin@soporteaereo.com</td>
+                        <td>Gerente de Estacion</td>
+                        <td>SuperUsuario</td>
+                        <td>
+                            <input type="checkbox" class="action-checkbox">
+                            <a href="#" class="action-button">Editar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Diaz Avila Hector Jose</td>
+                        <td>hector.diaz@soporteaereo.com</td>
+                        <td>Coordinador</td>
+                        <td>SuperUsuario</td>
+                        <td>
+                            <input type="checkbox" class="action-checkbox">
+                            <a href="#" class="action-button">Editar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hernandez Duran Erika Edith</td>
+                        <td>edith.duran@soporteaereo.com</td>
+                        <td>Subdirectora</td>
+                        <td>SuperUsuario</td>
+                        <td>
+                            <input type="checkbox" class="action-checkbox">
+                            <a href="#" class="action-button">Editar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- 🔵 Barra azul inferior con los enlaces -->
+    <footer class="navbar">
+        <div class="nav-links">
+            <a href="#">Soporte Técnico</a>
+            <a href="https://www.youtube.com/watch?v=YW4DbwujexU">Tutorial</a>
+            <a href="#">Copyright SAE S.T@2025</a>
+        </div>
+    </footer>
+    <script src="{% static 'JS/editarCuentas.js' %}"></script>
+</body>
+</html>
