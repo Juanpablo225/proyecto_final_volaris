@@ -15,8 +15,9 @@
         <div class="menu-container">
             <button class="menu-icon" onclick="toggleMenu()">&#9776;</button>
             <div class="dropdown-menu" id="dropdown-menu">
-                <a href="{% url 'HOME_USER' %}">Inicio</a>
-                <a href="{% url 'SEARCH_USER' %}">Buscar</a>
+                <a href="{% url 'HOME_ADMIN' %}">Inicio</a>
+                <a href="{% url 'SEARCH_ADMIN' %}">Buscar</a>
+                <a href="#">Editar Usuarios</a>
 
 
             </div>
@@ -38,17 +39,44 @@
     </header>
 
 
+
+
     <main>
+
         <div class="upload-container">
-            <label for="fileInput" class="upload-button">Seleccionar PDF</label>
-            <input type="file" id="fileInput" multiple hidden>
-            <p>Ó arrastra y suelta un PDF</p>
+     <form action="#" method="post">
+    {% csrf_token %}
+  <button class="upload-button">Seleccionar PDF</button>
 
-            <div id="dropZone">Suelta el archivo aquí</div>
+    <input type="file" id="fileInput" name="file" multiple hidden required>
+    <p>Ó arrastra y suelta un PDF</p>
 
-            <ul id="fileList"></ul>
+    <div id="dropZone">Suelta el archivo aquí</div>
+    <ul id="fileList"></ul>
+<div class="upload-form-row">
+    <input type="text" id="nombre" name="name" placeholder="# NUMERO DE GUIA" pattern="\d{8}" required title="Debe contener exactamente 8 dígitos numéricos">
+
+    <input type="date" name="day" >
+</div>
+
+    <div class="button-group">
+        <button type="button" class="cancel-btn" onclick="window.location.href='{% url 'HOME_USER' %}'">Cancelar</button>
+        <button type="submit" class="login-btn">Enviar</button>
+    </div>
+</form>
+
+
+
+
+
         </div>
+
     </main>
+
+
+
+
+
 
     <footer class="navbar">
         <div class="nav-links">
@@ -71,7 +99,6 @@
             profileMenu.style.display = (profileMenu.style.display === 'block') ? 'none' : 'block';
         }
     </script>
-
 
     <!-- Conexión con el archivo JavaScript -->
     <script src="{% static 'JS/index.js' %}"></script>

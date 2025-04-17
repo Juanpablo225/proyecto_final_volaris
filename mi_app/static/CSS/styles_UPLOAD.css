@@ -106,6 +106,11 @@ body {
     height: 50px; /* Ajustado para mantener proporción con la barra */
     width: auto;
 }
+.fecha {
+    position: absolute;
+    top: 100px; /* Ajusta hacia abajo */
+    right: 30px; /* Lo pega a la derecha */
+}
 
 /* Estilos para el contenido principal */
 main {
@@ -182,7 +187,7 @@ p {
 }
 
 .delete-btn {
-    background-color: #e53935;
+    background-color: #c53b39;
     color: white;
     padding: 5px 10px;
     border: none;
@@ -193,7 +198,7 @@ p {
 }
 
 .delete-btn:hover {
-    background-color: #c62828;
+    background-color: #8c0f0f;
 }
 
 /* 🔵 Barra azul inferior */
@@ -223,3 +228,123 @@ footer.navbar {
 .nav-links a:hover {
     text-decoration: underline;
 }
+
+
+
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.login-btn {
+    background-color: #0a7a1e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background-color: #8c0f0f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: #056e1d;
+}
+
+.cancel-btn:hover {
+    background-color: #5a0000;
+}
+
+
+/* Contenedor que agrupa el nombre y la fecha en una sola fila */
+.upload-form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px; /* Espacio entre los campos */
+    margin-top: 15px;
+}
+
+/* Estilo para el input de nombre */
+.upload-form-row input[type="text"] {
+    flex: 2;
+    padding: 8px;
+    font-size: 14px;
+}
+
+/* Estilo para el input de fecha */
+.upload-form-row input[type="date"] {
+    flex: 1;
+    padding: 5px;
+    font-size: 12px; /* Más pequeño */
+    height: 35px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

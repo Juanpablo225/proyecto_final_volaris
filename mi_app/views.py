@@ -68,9 +68,6 @@ def validar_usuario(username, password, file_path):
 
 
 
-
-
-
 def RECOVERY(request):
     return render(request, 'mi_app/Recovery.html')
 #################################################################################################
@@ -93,3 +90,6 @@ def UPLOAD_ADMIN(request):
 def UPLOAD_USER(request):
     return render(request, 'mi_app/UPLOAD_USER.html')
 ##################################################################################################
+def Editar_Cuentas(request):
+    return render(request,'mi_app/Editar_Cuentas.html')
+###################################################################################################

@@ -4,7 +4,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+html, body {
+    overflow: hidden;
+    height: 100%;
+}
 body {
     font-family: Arial, sans-serif;
     height: 100vh;
@@ -14,6 +17,14 @@ body {
     align-items: center;
     background-color: #f4f4f4;
 }
+
+
+
+
+
+
+
+
 
 /* 🔵 Barra azul superior e inferior */
 .navbar {
@@ -26,6 +37,12 @@ body {
     display: flex;
     justify-content: center; /* Centra el logo */
     align-items: center;
+}
+
+.navbar .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 70px;
 }
 
 /* Contenedor del menú a la izquierda */
@@ -66,6 +83,16 @@ body {
 .dropdown-menu a:hover {
     background-color: #053395;
 }
+
+
+
+
+
+
+
+
+
+
 
 /* Menú de perfil en la parte superior derecha, ajustado más a la izquierda */
 .profile-menu-container {
@@ -175,14 +202,17 @@ footer.navbar {
 }
 
 .nav-links {
-    display: flex;
-    justify-content: center;
-    gap: 90px;
-    padding: 10px 0;
+   display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    gap: 40px; /* Espacio entre los enlaces */
+    width: 100%;
+    padding: 15px 0;
 }
 
 .nav-links a {
-    color: white;
-    text-decoration: none;
+    color: white;           /* Texto blanco */
+    text-decoration: none;  /* Sin subrayado */
     font-size: 16px;
+    font-weight: normal;
+    cursor: default;
 }
