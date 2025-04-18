@@ -22,7 +22,7 @@
 
         <img src="{% static 'ICONS/logoo.png' %}" alt="Logo Sae" class="logo">
 
-         <!-- Menú desplegable a la derecha con icono de perfil -->
+        <!-- Menú desplegable a la derecha con icono de perfil -->
         <div class="profile-menu-container">
             <button class="profile-icon" onclick="toggleProfileMenu()">
                 <img src="{% static 'ICONS/user.ico' %}" alt="Perfil">
@@ -33,18 +33,27 @@
                 <a href="{% url 'index' %}">Cerrar Sesión</a>
             </div>
         </div>
-
-
-
-
-
-
-
     </header>
     <h1>Búsqueda de Archivos</h1>
 
     <main>
         <div class="background"></div>
+
+        <!-- Contenedor de búsqueda por # Guía -->
+        <div class="search-container">
+            <label for="searchInput">Buscar por # Guía:</label>
+            <input type="text" id="searchInput" placeholder="Ej. 001">
+            <button onclick="restablecerBusqueda()">Restablecer</button>
+        </div>
+
+        <!-- Nuevo contenedor de búsqueda por rango de fechas -->
+        <div class="date-search-container">
+            <label for="startDate">Fecha de inicio:</label>
+            <input type="date" id="startDate">
+            <label for="endDate">Fecha de fin:</label>
+            <input type="date" id="endDate">
+            <button onclick="filtrarPorFechas()">Filtrar</button>
+        </div>
 
         <div class="Tabla">
             <!-- Botón para seleccionar/desmarcar todos los archivos -->
@@ -62,41 +71,43 @@
                         <th>Opciones</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
+                <tbody id="tablaArchivos">
+                    <tr data-fecha="2025-04-01 10:30 AM">
                         <td>001</td>
                         <td>2025-04-01 10:30 AM</td>
                         <td>
-                            <input type="checkbox" class="file-checkbox" id="file-001" data-file="archivo1.pdf">
-                            <a href="#" class="action-button" download="archivo1.pdf">Descargar</a>
+                            <input type="checkbox" class="file-checkbox" id="file-001" data-file="1_Enfoque_y_elementos_de_la_probabilidad.pdf">
+                            <a href="{% static 'pdfs/1_Enfoque_y_elementos_de_la_probabilidad.pdf' %}" class="action-button" download="1_Enfoque_y_elementos_de_la_probabilidad.pdf">Descargar</a>
+                            <button class="action-button preview-button" onclick="previewFile('{% static 'pdfs/1_Enfoque_y_elementos_de_la_probabilidad.pdf' %}')">Vista Previa</button>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fecha="2025-04-02 12:00 PM">
                         <td>002</td>
                         <td>2025-04-02 12:00 PM</td>
                         <td>
                             <input type="checkbox" class="file-checkbox" id="file-002" data-file="archivo2.pdf">
                             <a href="#" class="action-button" download="archivo2.pdf">Descargar</a>
+                            <button class="action-button preview-button" onclick="previewFile('{% static 'pdfs/archivo2.pdf' %}')">Vista Previa</button>
                         </td>
                     </tr>
-                                       <tr>
-                        <td>001</td>
-                        <td>2025-04-01 10:30 AM</td>
+                    <tr data-fecha="2025-04-05 04:30 PM">
+                        <td>003</td>
+                        <td>2025-04-05 04:30 PM</td>
                         <td>
-                            <input type="checkbox" class="file-checkbox" id="file-001" data-file="archivo1.pdf">
-                            <a href="#" class="action-button" download="archivo1.pdf">Descargar</a>
+                            <input type="checkbox" class="file-checkbox" id="file-003" data-file="archivo3.pdf">
+                            <a href="#" class="action-button" download="archivo3.pdf">Descargar</a>
+                            <button class="action-button preview-button" onclick="previewFile('{% static 'pdfs/1_Enfoque_y_elementos_de_la_probabilidad.pdf' %}')">Vista Previa</button>
                         </td>
                     </tr>
-                    <tr>
-                        <td>002</td>
-                        <td>2025-04-02 12:00 PM</td>
+                    <tr data-fecha="2025-04-07 11:00 PM">
+                        <td>004</td>
+                        <td>2025-04-07 11:00 PM</td>
                         <td>
-                            <input type="checkbox" class="file-checkbox" id="file-002" data-file="archivo2.pdf">
-                            <a href="#" class="action-button" download="archivo2.pdf">Descargar</a>
+                            <input type="checkbox" class="file-checkbox" id="file-004" data-file="archivo4.pdf">
+                            <a href="#" class="action-button" download="archivo4.pdf">Descargar</a>
+                            <button class="action-button preview-button" onclick="previewFile('{% static 'pdfs/1_Enfoque_y_elementos_de_la_probabilidad.pdf' %}')">Vista Previa</button>
                         </td>
                     </tr>
-
-
                 </tbody>
             </table>
         </div>
@@ -111,61 +122,14 @@
         </div>
     </footer>
 
+    <div id="previewModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closePreview()">&times;</span>
+            <embed id="pdfViewer" src="" width="100%" height="600px" type="application/pdf">
+        </div>
+    </div>
 
-
-
-
-
-
-    <script>
-        // Función para mostrar y ocultar el menú desplegable
-        function toggleMenu() {
-            const menu = document.getElementById('dropdown-menu');
-            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-        }
-
-        function toggleProfileMenu() {
-            const profileMenu = document.getElementById('profile-menu');
-            profileMenu.style.display = (profileMenu.style.display === 'block') ? 'none' : 'block';
-        }
-
-               // Función para seleccionar o desmarcar todas las casillas
-        function selectAllFiles() {
-            const checkboxes = document.querySelectorAll('.file-checkbox');
-            const selectAllButton = document.getElementById('select-all-button');
-            const isChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
-
-            checkboxes.forEach(function(checkbox) {
-                checkbox.checked = !isChecked;
-            });
-
-            if (isChecked) {
-                selectAllButton.textContent = "Seleccionar Todos";
-            } else {
-                selectAllButton.textContent = "Deseleccionar Todos";
-            }
-        }
-
-        // Función para descargar los archivos seleccionados
-        function downloadSelectedFiles() {
-            const checkboxes = document.querySelectorAll('.file-checkbox:checked');
-            if (checkboxes.length === 0) {
-                alert("No has seleccionado ningún archivo.");
-                return;
-            }
-
-            checkboxes.forEach(function(checkbox) {
-                const fileName = checkbox.getAttribute('data-file');
-                const link = document.createElement('a');
-                link.href = fileName; // Asumimos que los archivos están en la misma ruta
-                link.download = fileName; // Establece el nombre del archivo para la descarga
-                link.click(); // Inicia la descarga
-            });
-        }
-    </script>
+    <script src="{% static 'JS/searchDocs.js' %}"></script>
 
 </body>
-
-
-
 </html>
