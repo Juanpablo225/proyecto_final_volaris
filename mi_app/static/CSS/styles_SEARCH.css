@@ -65,6 +65,11 @@ body {
     background-color: #053395;
 }
 
+
+
+
+
+
 /* Menú de perfil en la parte superior derecha, ajustado más a la izquierda */
 .profile-menu-container {
     position: absolute;
@@ -89,6 +94,15 @@ body {
     right: auto;
     left: -90px; /* Se despliega hacia la izquierda */
 }
+
+
+
+
+
+
+
+
+
 
 /* Contenedor del logo y título */
 .logo-container {
@@ -117,7 +131,8 @@ main {
     width: 100%;
 }
 
-/* TABLA */
+
+/*TABLA*/
 table {
     width: 100%;
     border-collapse: collapse;
@@ -163,9 +178,11 @@ table tr:nth-child(even) {
 .file-checkbox:checked {
     background-color: #053395;
 }
-/* TABLA */
+/*TABLA*/
+
 
 /* 🔵 Barra azul inferior con los enlaces */
+/* 🔵 Barra azul inferior */
 footer.navbar {
     margin-top: auto;
     position: fixed;
@@ -179,7 +196,7 @@ footer.navbar {
 .nav-links {
     display: flex;
     justify-content: center;
-    gap: 40px; /* Espacio entre los enlaces */
+    gap: 90px;
     padding: 10px 0;
 }
 
@@ -192,3 +209,91 @@ footer.navbar {
 .nav-links a:hover {
     text-decoration: underline;
 }
+
+.search-container {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.search-container input {
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.search-container button {
+    padding: 6px 12px;
+    font-size: 13px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0A284E;
+    color: white;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #053395;
+}
+
+
+
+/*VISTA PREVIA*/
+.preview-button {
+    background-color: #28a745; /* Color verde */
+    padding: 6px 10px;
+    font-size: 11px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.preview-button:hover {
+    background-color: #218838; /* Verde oscuro */
+}
+
+/* Estilos para el modal de vista previa */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    width: 80%;
+    height: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #000;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: red;
+}
+
+
