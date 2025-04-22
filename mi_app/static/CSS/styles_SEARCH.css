@@ -6,6 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
+    margin-bottom: 150px;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -296,4 +297,47 @@ footer.navbar {
     color: red;
 }
 
+/*Paginación*/
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 800px;
+}
 
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+    gap: 5px;
+}
+
+.pagination button {
+    background-color: #0A284E;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.pagination button.active {
+    background-color: #053395;
+    font-weight: bold;
+}
+
+.pagination button:hover {
+    background-color: #053395;
+}
+
+.pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    color: #666;
+}
+
+/*Paginación*/

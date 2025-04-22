@@ -34,19 +34,38 @@
                 <a href="{% url 'index' %}">Cerrar Sesión</a>
             </div>
         </div>
-
-
-
     </header>
     <h1>Búsqueda de Archivos</h1>
 
     <main>
         <div class="background"></div>
 
+        <!-- Contenedor de búsqueda por # Guía -->
         <div class="search-container">
             <label for="searchInput">Buscar por # Guía:</label>
             <input type="text" id="searchInput" placeholder="Ej. 001">
             <button onclick="restablecerBusqueda()">Restablecer</button>
+        </div>
+
+        <!-- Nuevo contenedor de búsqueda por rango de fechas -->
+        <div class="date-search-container">
+            <label for="startDate">Fecha de inicio:</label>
+            <input type="date" id="startDate">
+            <label for="endDate">Fecha de fin:</label>
+            <input type="date" id="endDate">
+            <button onclick="filtrarPorFechas()">Filtrar</button>
+        </div>
+
+        <!-- Selector de cantidad de filas por página -->
+        <div class="pagination-controls">
+            <label for="rowsPerPage">Mostrar:</label>
+            <select id="rowsPerPage" onchange="changeRowsPerPage()">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+            <span>documentos por página</span>
         </div>
 
         <div class="Tabla">
@@ -66,7 +85,7 @@
                     </tr>
                 </thead>
                 <tbody id="tablaArchivos">
-                    <tr>
+                    <tr data-fecha="2025-04-01 10:30 AM">
                         <td>001</td>
                         <td>2025-04-01 10:30 AM</td>
                         <td>
@@ -75,7 +94,7 @@
                             <button class="action-button preview-button" onclick="previewFile('{% static 'pdfs/1_Enfoque_y_elementos_de_la_probabilidad.pdf' %}')">Vista Previa</button>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fecha="2025-04-02 12:00 PM">
                         <td>002</td>
                         <td>2025-04-02 12:00 PM</td>
                         <td>
@@ -84,28 +103,93 @@
                             <button class="action-button preview-button" onclick="previewFile('{% static 'pdfs/archivo2.pdf' %}')">Vista Previa</button>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fecha="2025-04-05 04:30 PM">
                         <td>003</td>
-                        <td>2025-04-01 10:30 AM</td>
+                        <td>2025-04-05 04:30 PM</td>
                         <td>
                             <input type="checkbox" class="file-checkbox" id="file-003" data-file="archivo3.pdf">
                             <a href="#" class="action-button" download="archivo3.pdf">Descargar</a>
                             <button class="action-button preview-button" onclick="previewFile('{% static 'pdfs/1_Enfoque_y_elementos_de_la_probabilidad.pdf' %}')">Vista Previa</button>
                         </td>
                     </tr>
-                    <tr>
+                    <tr data-fecha="2025-04-07 11:00 PM">
                         <td>004</td>
-                        <td>2025-04-02 12:00 PM</td>
+                        <td>2025-04-07 11:00 PM</td>
                         <td>
                             <input type="checkbox" class="file-checkbox" id="file-004" data-file="archivo4.pdf">
                             <a href="#" class="action-button" download="archivo4.pdf">Descargar</a>
                             <button class="action-button preview-button" onclick="previewFile('{% static 'pdfs/1_Enfoque_y_elementos_de_la_probabilidad.pdf' %}')">Vista Previa</button>
                         </td>
                     </tr>
-
-
+                    <tr data-fecha="2025-04-07 11:00 PM">
+                        <td>005</td>
+                        <td>2025-04-07 11:00 PM</td>
+                        <td>
+                            <input type="checkbox" class="file-checkbox" id="file-005" data-file="archivo4.pdf">
+                            <a href="#" class="action-button" download="archivo4.pdf">Descargar</a>
+                            <button class="action-button preview-button" onclick="previewFile('{% static 'pdfs/1_Enfoque_y_elementos_de_la_probabilidad.pdf' %}')">Vista Previa</button>
+                        </td>
+                    </tr>
+                    <tr data-fecha="2025-04-07 11:00 PM">
+                        <td>006</td>
+                        <td>2025-04-07 11:00 PM</td>
+                        <td>
+                            <input type="checkbox" class="file-checkbox" id="file-006" data-file="archivo4.pdf">
+                            <a href="#" class="action-button" download="archivo4.pdf">Descargar</a>
+                            <button class="action-button preview-button" onclick="previewFile('{% static 'pdfs/1_Enfoque_y_elementos_de_la_probabilidad.pdf' %}')">Vista Previa</button>
+                        </td>
+                    </tr>
+                    <tr data-fecha="2025-04-07 11:00 PM">
+                        <td>007</td>
+                        <td>2025-04-07 11:00 PM</td>
+                        <td>
+                            <input type="checkbox" class="file-checkbox" id="file-007" data-file="archivo4.pdf">
+                            <a href="#" class="action-button" download="archivo4.pdf">Descargar</a>
+                            <button class="action-button preview-button" onclick="previewFile('{% static 'pdfs/1_Enfoque_y_elementos_de_la_probabilidad.pdf' %}')">Vista Previa</button>
+                        </td>
+                    </tr>
+                    <tr data-fecha="2025-04-07 11:00 PM">
+                        <td>008</td>
+                        <td>2025-04-07 11:00 PM</td>
+                        <td>
+                            <input type="checkbox" class="file-checkbox" id="file-008" data-file="archivo4.pdf">
+                            <a href="#" class="action-button" download="archivo4.pdf">Descargar</a>
+                            <button class="action-button preview-button" onclick="previewFile('{% static 'pdfs/1_Enfoque_y_elementos_de_la_probabilidad.pdf' %}')">Vista Previa</button>
+                        </td>
+                    </tr>
+                    <tr data-fecha="2025-04-07 11:00 PM">
+                        <td>009</td>
+                        <td>2025-04-07 11:00 PM</td>
+                        <td>
+                            <input type="checkbox" class="file-checkbox" id="file-009" data-file="archivo4.pdf">
+                            <a href="#" class="action-button" download="archivo4.pdf">Descargar</a>
+                            <button class="action-button preview-button" onclick="previewFile('{% static 'pdfs/1_Enfoque_y_elementos_de_la_probabilidad.pdf' %}')">Vista Previa</button>
+                        </td>
+                    </tr>
+                    <tr data-fecha="2025-04-07 11:00 PM">
+                        <td>010</td>
+                        <td>2025-04-07 11:00 PM</td>
+                        <td>
+                            <input type="checkbox" class="file-checkbox" id="file-010" data-file="archivo4.pdf">
+                            <a href="#" class="action-button" download="archivo4.pdf">Descargar</a>
+                            <button class="action-button preview-button" onclick="previewFile('{% static 'pdfs/1_Enfoque_y_elementos_de_la_probabilidad.pdf' %}')">Vista Previa</button>
+                        </td>
+                    </tr>
+                    <tr data-fecha="2025-04-07 11:00 PM">
+                        <td>011</td>
+                        <td>2025-04-07 11:00 PM</td>
+                        <td>
+                            <input type="checkbox" class="file-checkbox" id="file-011" data-file="archivo4.pdf">
+                            <a href="#" class="action-button" download="archivo4.pdf">Descargar</a>
+                            <button class="action-button preview-button" onclick="previewFile('{% static 'pdfs/1_Enfoque_y_elementos_de_la_probabilidad.pdf' %}')">Vista Previa</button>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
+
+            <!-- Controles de paginación -->
+            <div id="pagination" class="pagination"></div>
+
         </div>
     </main>
 
@@ -124,8 +208,8 @@
             <embed id="pdfViewer" src="" width="100%" height="600px" type="application/pdf">
         </div>
     </div>
+
     <script src="{% static 'JS/searchDocs.js' %}"></script>
 
 </body>
-
 </html>
