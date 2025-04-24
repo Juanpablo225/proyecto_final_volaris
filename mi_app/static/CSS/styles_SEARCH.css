@@ -28,11 +28,18 @@ body {
     align-items: center;
 }
 
+.navbar .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 70px;
+}
+
 /* Contenedor del menú a la izquierda */
 .menu-container {
     position: absolute;
     left: 20px;
     top: 15px;
+    z-index: 3;
 }
 
 .menu-icon {
@@ -76,6 +83,7 @@ body {
     position: absolute;
     right: 90px; /* Movido más a la izquierda */
     top: 20px;
+    z-index: 3;
 }
 
 .profile-icon {
@@ -85,8 +93,8 @@ body {
 }
 
 .profile-icon img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 55px;
     border-radius: 50%;
 }
 
@@ -95,14 +103,6 @@ body {
     right: auto;
     left: -90px; /* Se despliega hacia la izquierda */
 }
-
-
-
-
-
-
-
-
 
 
 /* Contenedor del logo y título */
@@ -127,11 +127,21 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 20px;
+    justify-content: flex-start;
+    padding: 0 20px;
     width: 100%;
 }
 
+.filters-fixed {
+    width: 70%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
 
 /*TABLA*/
 table {
@@ -212,8 +222,6 @@ footer.navbar {
 }
 
 .search-container {
-    margin-top: 20px;
-    margin-bottom: 10px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -249,8 +257,9 @@ footer.navbar {
     padding: 6px 10px;
     font-size: 11px;
     text-decoration: none;
-    border: none;
     cursor: pointer;
+    color: white;
+    border: none;
     border-radius: 5px;
     margin-left: 10px;
 }
@@ -259,42 +268,69 @@ footer.navbar {
     background-color: #218838; /* Verde oscuro */
 }
 
+/*Botón de edición*/
+.edit-button {
+    background-color: #ec1c1c; /* Color rojo */
+    padding: 6px 10px;
+    font-size: 12px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    margin-left: 10px;
+}
+
+.edit-button:hover {
+    background-color: #bd0707; /* Verde oscuro */
+}
+
 /* Estilos para el modal de vista previa */
 .modal {
-    display: none; /* Oculto por defecto */
+    display: none; /*Oculto por defecto*/
     position: fixed;
-    z-index: 1;
+    z-index: 10;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+    overflow: scroll;
+    background-color: rgba(0, 0, 0, 0.7); /*Fondo semitransparente*/
     justify-content: center;
     align-items: center;
 }
 
-.modal-content {
-    background-color: #fff;
-    margin: auto;
-    padding: 20px;
+/* Contenido del modal */
+.modal .modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
     width: 80%;
-    height: 80%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-height: 90vh
+    max-width: 800px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
 }
 
-.close-btn {
+/* Título del modal */
+.modal .modal-content h2 {
+    margin-bottom: 20px;
+    color: #0A284E;
+}
+
+/*Pasar este botón a la zona fuera del contenido del modal y que sea visible*/
+.modal .close-btn {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 20px;
     font-size: 30px;
-    color: #000;
+    font-weight: bold;
+    color: #ec1c1c;
     cursor: pointer;
-}
-
-.close-btn:hover {
-    color: red;
 }
 
 /*Paginación*/
@@ -302,11 +338,9 @@ footer.navbar {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-top: 10px;
-    margin-bottom: 20px;
     justify-content: flex-start;
     width: 100%;
-    padding-left: 800px;
+    padding-left: 300px;
 }
 
 .pagination {
@@ -323,6 +357,7 @@ footer.navbar {
     padding: 6px 12px;
     cursor: pointer;
     border-radius: 4px;
+    margin-bottom: 80px;
 }
 
 .pagination button.active {
@@ -341,3 +376,81 @@ footer.navbar {
 }
 
 /*Paginación*/
+
+
+
+/* Modal de edición personalizado */
+#editModal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+#editModal .modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+#editModal h2 {
+    margin-bottom: 20px;
+    color: #0A284E;
+    text-align: center;
+}
+
+#editForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#editForm label {
+    font-weight: bold;
+    color: #333;
+}
+
+#editForm input[type="text"],
+#editForm input[type="datetime-local"] {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#editForm button {
+    padding: 10px;
+    background-color: #0A284E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#editForm button:hover {
+    background-color: #053395;
+}
+
+#editModal .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ec1c1c;
+    cursor: pointer;
+}
+
+body.modal-open {
+    overflow: hidden;
+}

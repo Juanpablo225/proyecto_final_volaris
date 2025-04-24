@@ -53,6 +53,7 @@ function previewFile(fileUrl) {
     const pdfViewer = document.getElementById("pdfViewer");
     pdfViewer.src = fileUrl;
     modal.style.display = "flex";
+    document.body.classList.add("modal-open");
 }
 
 function closePreview() {
@@ -60,6 +61,7 @@ function closePreview() {
     const pdfViewer = document.getElementById("pdfViewer");
     pdfViewer.src = "";
     modal.style.display = "none";
+    document.body.classList.remove("modal-open");
 }
 
 window.onclick = function (event) {
@@ -186,3 +188,51 @@ function changeRowsPerPage() {
 document.addEventListener('DOMContentLoaded', () => {
     applyFiltersAndPaginate();
 });
+
+// Abrir el modal y cargar datos actuales del archivo
+document.querySelectorAll('.edit-button').forEach((btn, index) => {
+    btn.removeAttribute('download'); // Elimina el atributo de descarga
+    btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        const row = btn.closest('tr');
+        const guia = row.cells[0].textContent.trim();
+        const fecha = row.getAttribute('data-fecha');
+
+        document.getElementById('editGuia').value = guia;
+
+        // Convertir formato fecha "2025-04-01 10:30 AM" a tipo datetime-local
+        const parsedDate = new Date(fecha);
+        const formattedDate = parsedDate.toISOString().slice(0, 16); // yyyy-MM-ddTHH:mm
+        document.getElementById('editFecha').value = formattedDate;
+
+        document.getElementById('editRowIndex').value = index;
+        document.getElementById('editModal').style.display = 'flex';
+    });
+});
+
+// Cerrar modal
+function cerrarModalEdicion() {
+    document.getElementById('editModal').style.display = 'none';
+}
+
+// Guardar cambios realizados en el modal
+function guardarCambios() {
+    const index = document.getElementById('editRowIndex').value;
+    const nuevaGuia = document.getElementById('editGuia').value.trim();
+    const nuevaFecha = new Date(document.getElementById('editFecha').value);
+
+    if (!nuevaGuia || !nuevaFecha) {
+        alert("Todos los campos son obligatorios.");
+        return;
+    }
+
+    const rows = document.querySelectorAll("#tablaArchivos tr");
+    const targetRow = rows[index];
+
+    targetRow.cells[0].textContent = nuevaGuia;
+    targetRow.setAttribute('data-fecha', nuevaFecha.toISOString());
+    targetRow.cells[1].textContent = nuevaFecha.toLocaleString();
+
+    cerrarModalEdicion();
+    applyFiltersAndPaginate(); // Reaplica filtros en caso de que se vea afectado
+}
