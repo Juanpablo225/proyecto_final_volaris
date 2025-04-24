@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="{% static 'ICONS/logo_sae.ico' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAE Respaldo - Mi Perfil</title>
+    <link rel="stylesheet" href="{% static 'CSS/styles_mi_Perfil.css' %}">
+
+
+</head>
+<body>
+    <!-- 🔵 Barra azul superior con el logo y el título -->
+    <header class="navbar">
+        <!-- Menú desplegable a la izquierda -->
+        <div class="menu-container">
+            <button class="menu-icon" onclick="toggleMenu()">&#9776;</button>
+            <div class="dropdown-menu" id="dropdown-menu">
+                <a href="{% url 'HOME_ADMIN' %}">Inicio</a>
+                <a href="{% url 'UPLOAD_ADMIN' %}">Subir</a>
+                <a href="{% url 'SEARCH_ADMIN' %}">Buscar</a>
+                <a href="{% url 'Editar_Cuentas' %}">Editar Cuentas</a>
+
+            </div>
+        </div>
+        <div class="title">Mi Perfil</div>
+        <!-- Logo centrado -->
+        <div class="logo-center">
+            <img src="{% static 'ICONS/logoo.png' %}" alt="Logo Sae" class="logo">
+        </div>
+    </header>
+ <!-- Modal Cambiar Contraseña -->
+    <div id="modalContra" class="modal">
+      <div class="modal-content">
+        <h2>Cambiar Contraseña</h2>
+          <form id="verificar-contra-actual" method="POST" enctype="multipart/form-data">
+            <label for="contra-actual">Contraseña Actual</label>
+            <input type="password" id="contra-actual" placeholder="Escribe tu contraseña">
+            <div class="modal-buttons">
+              <button  type="button" class="can-btn" onclick="cerrarModal()">Cancelar</button>
+              <button type="button" class="v-btn" onclick="abrirNuevoModal()">Verificar</button>
+            </div>
+          </form>
+      </div>
+    </div>
+        <!-- Modal Nueva Contraseña -->
+    <div id="modalNuevaContra" class="modal">
+      <div class="modal-content">
+        <h2>Cambiar Contraseña</h2>
+        <form id="nueva-contra-form" method="POST">
+          <label for="nueva-contra">Nueva Contraseña</label>
+          <input type="password" id="nueva-contra" placeholder="Escribe tu nueva contraseña">
+
+          <label for="repetir-contra">Repetir Contraseña</label>
+          <input type="password" id="repetir-contra" placeholder="Repite tu nueva contraseña">
+
+          <div class="modal-buttons">
+            <button type="button" class="can-btn" onclick="cerrarNuevoModal()">Cancelar</button>
+            <button type="submit" class="v-btn" >Aceptar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+<main>
+    <!--Foto de Perfil -->
+    <div class="foto-perfil-conten">
+        <img src ="{% static 'ICONS/user_edit.ico'%}" alt="Foto de Perfil" class="foto-pic">
+    </div>
+    <!--Tabla de Informacion-->
+        <div class="profile-info-container">
+            <table class="profile-info-table">
+                <tr>
+                    <th>Nombre</th>
+                    <td>Juan Pérez</td>
+                </tr>
+                <tr>
+                    <th>Correo</th>
+                    <td>juan.perez@sae.com</td>
+                </tr>
+                <tr>
+                    <th>Puesto</th>
+                    <td>Supervisor</td>
+                </tr>
+                <tr>
+                    <th>Rol</th>
+                    <td>Superusuario</td>
+                </tr>
+            </table>
+        </div>
+    <!--Boton Cambiar Contrasena -->
+    <div class="btn-contener">
+        <button type="button" class="btn-cambiar-contra">Cambiar Contraseña</button>
+    </div>
+</main>
+    <!-- 🔵 Barra azul inferior con los enlaces -->
+    <footer class="navbar">
+        <div class="nav-links">
+            <a href="#">Soporte Técnico</a>
+            <a href="https://www.youtube.com/watch?v=YW4DbwujexU">Tutorial</a>
+            <a href="#">Copyright SAE S.T@2025</a>
+        </div>
+    </footer>
+   <script src="{% static 'JS/mi_Perfil.js' %}"></script>
+</body>
+</html>

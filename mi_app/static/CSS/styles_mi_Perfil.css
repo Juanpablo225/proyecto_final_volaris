@@ -1,0 +1,319 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+
+
+/* 🔵 Barra azul superior e inferior */
+.navbar {
+    background-color: #0A284E;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+}
+.navbar .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 70px;
+}
+
+/* Contenedor del menú a la izquierda */
+.menu-container {
+    position: absolute;
+    left: 20px;
+    margin-top: 0px;
+}
+
+/* Contenedor del logo y título */
+.navbar .logo-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex: 1;
+}
+
+/* Estilos para el logo */
+.navbar .logo {
+    display: block;
+    height: 60px;
+    width: auto;
+    justify-content: center; /* Quita el margen fijo */
+}
+
+.menu-icon {
+    background-color: #0A284E;
+    color: white;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    background-color: #0A284E;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #053395;
+}
+
+.foto-perfil-conten {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -5px;
+    margin-bottom: 20px;
+}
+
+.foto-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #0056b3; /* Borde azul bonito */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+/* Contenedor del logo y título */
+.logo-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex: 1;
+}
+
+/* Estilos para el logo */
+.logo {
+    display: block;
+    height: 60px;
+    width: auto;
+    margin-right: 10px;
+
+}
+
+/* 🔷 Estilo del contenido principal */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.profile-info-container {
+    display: flex;
+    justify-content: center;
+    margin-top: -5px;
+    margin-bottom: 40px;
+
+}
+
+.profile-info-table {
+    border-collapse: collapse;
+    width: 60%;
+    max-width: 600px;
+    background-color: #f9f9f9;
+    border: 1px solid black; /* Agregado */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+/*Tabla xd*/
+.profile-info-table th,
+.profile-info-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border: 1px solid black; /* Agregado */
+}
+
+.profile-info-table th {
+    background-color: royalblue;
+    color: white;
+    width: 30%;
+}
+
+.profile-info-table tr:last-child td {
+    border-bottom: none;
+}
+
+/*Boton*/
+.btn-contener{
+    display: flex;
+    justify-content: center;
+    margin-top: -30px;
+    margin-bottom: 10px;
+}
+.btn-cambiar-contra{
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn-cambiar-contra:hover {
+    background-color: #0056b3;
+}
+
+/*Estilos de Modal*/
+.modal {
+    display: none;
+    position: fixed; /* Lo fija en la pantalla */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Lo centra exactamente */
+    z-index: 10000;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 2px solid black; /* Agregado */
+}
+
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #0A284E;
+}
+
+.modal-content input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 15px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.can-btn, .v-btn {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+}
+
+.can-btn {
+    background-color: #ccc;
+    border: 2px gray; /* Agregado */
+}
+
+.v-btn {
+    background-color: #007BFF;
+    color: white;
+    border: 2px #0056b3; /* Agregado */
+}
+
+.v-btn:hover {
+    background-color: #0056b3;
+}
+#modalNuevaContra form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+
+footer .nav-links {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    gap: 40px; /* Espacio entre los enlaces */
+    width: 100%;
+    padding: 15px 0;
+}
+
+footer .nav-links a {
+    color: white;           /* Texto blanco */
+    text-decoration: none;  /* Sin subrayado */
+    font-size: 16px;
+    font-weight: normal;
+    cursor: default;        /* Cursor normal, no de enlace */
+}
+
+@media (max-width: 768px) {
+    .navbar .title{
+        font-weight: bold;
+        margin-left: 60px;
+    }
+    .logo-center{
+        height: 40px;
+        margin-left: 0;
+    }
+    .profile-icon img{
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+    }
+    .profile-menu-container {
+        right: 20px;
+    }
+    .dropdown-menu {
+        top: 50px;
+    }
+
+    table th, table td {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+

@@ -92,4 +92,7 @@ def UPLOAD_USER(request):
 ##################################################################################################
 def Editar_Cuentas(request):
     return render(request,'mi_app/Editar_Cuentas.html')
+
 ###################################################################################################
+def mi_Perfil(request):
+    return render(request, 'mi_app/mi_Perfil.html')

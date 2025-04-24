@@ -31,7 +31,7 @@
                 <img src="{% static 'ICONS/user.ico' %}" alt="Perfil">
             </button>
             <div class="dropdown-menu" id="profile-menu">
-                <a href="#">Mi Perfil</a>
+                <a href="{% url 'mi_Perfil' %}">Mi Perfil</a>
                 <a href="#">Configuración</a>
                 <a href="{% url 'index' %}">Cerrar Sesión</a>
             </div>
