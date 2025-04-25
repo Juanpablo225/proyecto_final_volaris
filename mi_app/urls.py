@@ -28,5 +28,7 @@ urlpatterns = [
   #############################################################################################
     path('Editar_Cuentas/', views.Editar_Cuentas, name='Editar_Cuentas'),
     path('mi_Perfil/', views.mi_Perfil, name='mi_Perfil'),
+    path('mi_Perfil_USER/', views.mi_Perfil_USER, name='mi_Perfil_USER'),
 ###############################################################################################
+
 ]
