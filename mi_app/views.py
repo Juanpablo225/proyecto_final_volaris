@@ -96,3 +96,5 @@ def Editar_Cuentas(request):
 ###################################################################################################
 def mi_Perfil(request):
     return render(request, 'mi_app/mi_Perfil.html')
+def mi_Perfil_USER(request):
+    return render(request, 'mi_app/mi_Perfil_USER.html')
