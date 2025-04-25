@@ -19,13 +19,34 @@ body {
 .navbar {
     background-color: #0A284E;
     color: white;
-    padding: 15px 0;
-    text-align: center;
+    padding: 30px 60px;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     position: relative;
 }
 
+.navbar .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    text-align: left;
+}
 
+/* Estilos para el logo */
+.navbar img {
+    height: 60px;
+}
+
+.navbar-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50px;
+}
+
+/* Enlaces de navegación */
 .navbar .nav-links {
     display: flex;
     justify-content: center;
@@ -44,17 +65,6 @@ body {
     text-decoration: underline;
 }
 
-/* Estilos para el logo y título dentro de la barra */
-.navbar img {
-    height: 50px;
-    margin-right: 10px;
-}
-
-.navbar h1 {
-    font-size: 24px;
-}
-
-
 /* 🔷 Estilo del encabezado */
 header {
     display: flex;
@@ -66,12 +76,6 @@ header {
     padding: 20px 0;
 }
 
-header h1 {
-    margin: 0;
-    color: #f4f0f0;
-    font-size: 24px;
-}
-
 /* 🔷 Estilo del contenido principal */
 main {
     flex: 1;
@@ -80,23 +84,12 @@ main {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    width: 100%;
+    width: 80%;
 }
 
-/* 🔷 Fondo de la página */
-.background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-size: cover;
-    background-position: center;
-    animation: fadeBackground 10s infinite;
-}
 
-/* 🔷 Estilo del formulario de recuperación */
+
+/* 🔷 Formulario de recuperación */
 .login-form {
     background: rgba(5, 51, 149, 0.9);
     padding: 50px;
@@ -123,7 +116,7 @@ main {
     font-size: 16px;
 }
 
-/* 🔷 Contenedor de botones alineados */
+/* 🔷 Contenedor de botones */
 .button-container {
     display: flex;
     justify-content: space-between;
@@ -131,7 +124,7 @@ main {
     margin-top: 10px;
 }
 
-/* 🔷 Botones de acción */
+/* 🔷 Botones */
 .btn-cancel-email, .btn-mail, .btn-CODE {
     padding: 10px 20px;
     border: none;
@@ -143,10 +136,9 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50px; /* Altura uniforme para ambos botones */
+    height: 50px;
 }
 
-/* 🔴 Botón "Cancelar" */
 .btn-cancel-email {
     background-color: red;
     color: white;
@@ -156,7 +148,6 @@ main {
     background-color: darkred;
 }
 
-/* 🔵 Botón "Enviar" */
 .btn-mail {
     background-color: blue;
     color: white;
@@ -166,7 +157,6 @@ main {
     background-color: darkblue;
 }
 
-/* 🔷 Enlaces dentro del formulario */
 .login-form a {
     display: block;
     margin-top: 15px;
@@ -179,38 +169,33 @@ main {
     text-decoration: underline;
 }
 
-/* 🔷 Estilos para los iconos dentro de los botones */
-.btn-icon-cancel, .btn-icon-email {
-    width: 20px;
-    height: 10px;
-}
-
 /* 🔷 Mensajes de error */
 .error-messages p {
     color: red;
     font-size: 14px;
 }
 
-/* 🔷 Estilos para los enlaces en el footer */
+/* 🔷 Enlaces del footer */
 footer .nav-links {
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    gap: 40px; /* Espacio entre los enlaces */
+    justify-content: center;
+    gap: 20px;
     width: 100%;
-    padding: 15px 0;
 }
 
 footer .nav-links a {
-    color: white;           /* Texto blanco */
-    text-decoration: none;  /* Sin subrayado */
-    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
     font-weight: normal;
-    cursor: default;        /* Cursor normal, no de enlace */
+    cursor: default;
 }
 
 footer .nav-links a:hover {
     text-decoration: underline;
 }
+
+/* 🔷 Responsive*
 
 /* 🔷 Media Queries para dispositivos móviles */
 @media (max-width: 480px) {
