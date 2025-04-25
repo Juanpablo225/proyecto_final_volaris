@@ -11,10 +11,9 @@
 
 <!-- Barra azul superior -->
 <div class="navbar">
-    <span class="title">Recuperar Contrasena</span>
-    <img src="{% static 'ICONS/logoo.png' %}" alt="Logo">
+    <span class="title">Recuperar contraseña</span>
+    <img src="{% static 'ICONS/logoo.png' %}" alt="Logo" class="navbar-logo">
 </div>
-
 
 <main>
     <div class="background"></div>
@@ -25,21 +24,14 @@
 
         <form method="POST">
             {% csrf_token %}
-
-            <!-- Campo para el correo electrónico -->
             <input type="email" name="email" id="email" placeholder="correoejemplo@gmail.com" required>
 
-            <!-- Contenedor de botones alineados -->
             <div class="button-container">
                 <a href="{% url 'index' %}">
-                    <button type="button" class="btn-cancel-email btn-uniform">
-                        Cancelar
-                    </button>
+                    <button type="button" class="btn-cancel-email btn-uniform">Cancelar</button>
                 </a>
-               <a href="#">
-                    <button type="button" class="btn-mail btn-uniform">
-                        Enviar
-                    </button>
+                <a href="#">
+                    <button type="button" class="btn-mail btn-uniform">Enviar</button>
                 </a>
             </div>
         </form>
@@ -48,11 +40,11 @@
 
 <!-- Barra azul inferior con enlaces -->
 <footer class="navbar">
-        <div class="nav-links">
-            <a href="#">Soporte Técnico</a>
-            <a href="https://www.youtube.com/watch?v=YW4DbwujexU">Tutorial</a>
-            <a href="#">Copyright SAE S.T@2025</a>
-        </div>
+    <div class="nav-links">
+        <a href="#">Soporte Técnico</a>
+        <a href="https://www.youtube.com/watch?v=YW4DbwujexU">Tutorial</a>
+        <a href="#">Copyright SAE S.T@2025</a>
+    </div>
 </footer>
 
 </body>
