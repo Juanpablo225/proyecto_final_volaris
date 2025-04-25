@@ -42,7 +42,11 @@ body {
     border: none;
     cursor: pointer;
 }
-
+.navbar .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 70px;
+}
 .dropdown-menu {
     display: none;
     background-color: #0A284E;

@@ -25,6 +25,7 @@ body {
     position: relative;
 }
 
+
 .navbar .nav-links {
     display: flex;
     justify-content: center;
@@ -52,6 +53,7 @@ body {
 .navbar h1 {
     font-size: 24px;
 }
+
 
 /* 🔷 Estilo del encabezado */
 header {
