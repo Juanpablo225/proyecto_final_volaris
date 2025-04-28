@@ -31,7 +31,7 @@ document.querySelector("form").addEventListener("submit", function(e) {
     }
 });
 
-//Scripts para modal de boton editar by buga
+//Scripts para modal de boton editar by buga se agrego esto
 // Cierra el modal de edición
 function cerrarModalEditar() {
   eliminarFotoPreview();
