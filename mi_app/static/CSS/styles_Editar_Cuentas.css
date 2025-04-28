@@ -78,6 +78,76 @@ body {
     margin-bottom: 20px;
 }
 
+/* Contenedor de la foto */
+.foto-container {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Imagen en círculo */
+.foto-circulo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+    margin: 0 auto 10px;
+  border: 2px solid #3B82F6; /* azul vivo */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  display: none; /* se mostrará cuando haya foto */
+}
+
+/* Botones de foto junto a la imagen */
+.foto-container button {
+  margin: 0 5px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #2563EB; /* azul oscuro */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.foto-container button:hover {
+  background-color: #1E40AF; /* azul más oscuro */
+}
+
+
+/* Botones de acción al pie del modal */
+#btn-eliminar,
+#btn-modificar {
+  width: 48%;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+/* Botón Eliminar */
+#btn-eliminar {
+  background-color: #DC2626; /* rojo */
+  color: white;
+}
+
+/* Botón Modificar */
+#btn-modificar {
+  background-color: #10B981; /* verde */
+  color: white;
+  float: right;
+}
+
+/* Hover states */
+#btn-eliminar:hover {
+  background-color: #B91C1C;
+}
+#btn-modificar:hover {
+  background-color: #059669;
+}
+
+
 
 /* 🔵 Barra azul superior e inferior */
 .navbar {
@@ -86,7 +156,6 @@ body {
     padding: 15px 0;
     text-align: center;
     width: 100%;
-    position: relative;
     display: flex;
     align-items: center;
 

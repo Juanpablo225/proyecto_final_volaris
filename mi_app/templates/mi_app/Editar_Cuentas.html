@@ -80,6 +80,57 @@
       </div>
     </div>
 
+    <!--Modal para btn Editar Cuentaws-->
+    <div id="modal-editar" class="modal">
+      <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarModalEditar()">&times;</span>
+        <h2>Editar Usuario</h2>
+
+        <!-- Vista previa de la foto en círculo y botones de acción -->
+        <div class="foto-container">
+          <img id="preview-foto" src="" alt="Foto de perfil" class="foto-circulo"  />
+          <button type="button" onclick="subirFoto()">Subir Foto</button>
+          <button type="button" onclick="eliminarFotoPreview()">Eliminar Foto</button>
+        </div>
+
+        <form id="form-editar" method="POST" enctype="multipart/form-data">
+          <!-- Campo oculto para el ID de usuario -->
+          <input type="hidden" id="usuario-id" name="usuario_id" value="">
+
+          <label for="editar-nombre">Nombre:</label>
+          <input type="text" id="editar-nombre" name="nombre" value="" required><br>
+
+          <label for="editar-correo">Correo Electrónico:</label>
+          <input type="email" id="editar-correo" name="correo" value="" required><br>
+
+          <label for="editar-puesto">Puesto:</label>
+          <select id="editar-puesto" name="puesto" required>
+            <option value="--Seleccionar--">--Seleccionar--</option>
+            <option value="Subdirector/a">Subdirector/a</option>
+            <option value="Gerente">Gerente</option>
+            <option value="Supervisor/a">Supervisor/a</option>
+            <option value="Mostrador">Mostrador</option>
+          </select><br>
+
+          <label for="editar-rol">Rol:</label>
+          <select id="editar-rol" name="rol" required>
+            <option value="Usuario">Usuario</option>
+            <option value="SuperUsuario">SuperUsuario</option>
+          </select><br>
+
+          <!-- Input de archivo, oculto: se dispara con Subir Foto -->
+          <input type="file" id="editar-foto" name="foto" accept="image/*" style="display:none;">
+
+          <!-- Botones de Acción -->
+          <button type="submit" id="btn-modificar">Modificar</button>
+          <button type="button" id="btn-eliminar" onclick="eliminarCuenta()">Eliminar Cuenta</button>
+
+        </form>
+      </div>
+    </div>
+
+
+
     <main>
         <div class="acciones-cuentas">
            <button class="agregar-cuenta-btn">Agregar Cuenta</button>
@@ -103,19 +154,20 @@
                         <td>Bugarin Vargas Jose Concepcion</td>
                         <td>bugarin@soporteaereo.com</td>
                         <td>Gerente de Estacion</td>
-                        <td>SuperUsuario</td>
+                        <td>Administrador</td> <!--Cambio de SuperUsuario a Administrador by Buga-->
                         <td>
-                            <input type="checkbox" class="action-checkbox">
-                            <a href="#" class="action-button">Editar</a>
+                            <!--<input type="checkbox" class="action-checkbox">--> <!-- Eliminar esta linea de checkbos en cada renglon de la tabla  by Buga-->
+                            <!--<a href="#" class="action-button">Editar</a>  Cambie esto por lo de abajo by buga-->
+                            <button class="action-button">Editar</button>
                         </td>
                     </tr>
                     <tr>
                         <td>Diaz Avila Hector Jose</td>
                         <td>hector.diaz@soporteaereo.com</td>
                         <td>Coordinador</td>
-                        <td>SuperUsuario</td>
+                        <td>Administrador</td> <!--Cambio de SuperUsuario a Administrador by Buga-->
                         <td>
-                            <input type="checkbox" class="action-checkbox">
+                            <!--Aqui elimine una linea de codigo-->
                             <a href="#" class="action-button">Editar</a>
                         </td>
                     </tr>
@@ -123,9 +175,9 @@
                         <td>Hernandez Duran Erika Edith</td>
                         <td>edith.duran@soporteaereo.com</td>
                         <td>Subdirectora</td>
-                        <td>SuperUsuario</td>
+                        <td>Administrador</td> <!--Cambio de SuperUsuario a Administrador by Buga-->
                         <td>
-                            <input type="checkbox" class="action-checkbox">
+                            <!--Aqui elimine una linea de codigo by Buga-->
                             <a href="#" class="action-button">Editar</a>
                         </td>
                     </tr>
