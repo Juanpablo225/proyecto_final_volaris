@@ -203,23 +203,24 @@ footer.navbar {
     text-align: center;
     padding: 15px 0; /* Reducido de 30px a 15px para hacer la barra más delgada */
 }
-
 .nav-links {
-    display: flex;
-    justify-content: center;
-    gap: 90px;
-    padding: 10px 0;
+   display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    gap: 40px; /* Espacio entre los enlaces */
+    width: 100%;
+    padding: 15px 0;
 }
 
 .nav-links a {
-    color: white;
-    text-decoration: none;
+    color: white;           /* Texto blanco */
+    text-decoration: none;  /* Sin subrayado */
     font-size: 16px;
+    font-weight: normal;
+    cursor: default;
 }
 
-.nav-links a:hover {
-    text-decoration: underline;
-}
+
+
 
 .search-container {
     display: flex;
@@ -306,7 +307,7 @@ footer.navbar {
     padding: 30px;
     border-radius: 10px;
     width: 80%;
-    max-height: 90vh
+    max-height: 90vh;
     max-width: 800px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     position: relative;

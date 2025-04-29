@@ -61,9 +61,7 @@ body {
     margin: 0 10px;
 }
 
-.nav-links a:hover {
-    text-decoration: underline;
-}
+
 
 /* 🔷 Estilo del encabezado */
 header {
@@ -176,23 +174,29 @@ main {
 }
 
 /* 🔷 Enlaces del footer */
-footer .nav-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+footer.navbar {
+    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
+    text-align: center;
+    padding: 15px 0; /* Reducido de 30px a 15px para hacer la barra más delgada */
+}
+.nav-links {
+   display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    gap: 40px; /* Espacio entre los enlaces */
+    width: 100%;
+    padding: 15px 0;
 }
 
-footer .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 17px;
+.nav-links a {
+    color: white;           /* Texto blanco */
+    text-decoration: none;  /* Sin subrayado */
+    font-size: 16px;
     font-weight: normal;
     cursor: default;
-}
-
-footer .nav-links a:hover {
-    text-decoration: underline;
 }
 
 /* 🔷 Responsive*
