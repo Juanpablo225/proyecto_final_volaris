@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
 // Menú desplegable
 function toggleMenu() {
     const menu = document.getElementById('dropdown-menu');

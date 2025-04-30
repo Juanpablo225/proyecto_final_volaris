@@ -1,0 +1,39 @@
+/* Estilo general del modal de Soporte Técnico */
+/*Estilos de Modal*/
+
+.modal-blocke {
+    background-color: white;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: left;
+    box-shadow: 0px 0px 10px #000;
+}
+
+/* Estilo del botón de cierre (X) */
+.cerror{
+
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* Estilos de texto dentro del modal */
+.modal-blocke h2 {
+  color: #0A284E;
+  font-family: Arial, sans-serif;
+  margin-bottom: 15px;
+}
+
+.modal-blocke h3 {
+  color: Black;
+  font-family: Arial, sans-serif;
+  margin-bottom: 10px;
+}
+.modal-blocke h4 {
+  color: #666666;
+  font-family: Arial, sans-serif;
+  margin-bottom: 10px;
+}

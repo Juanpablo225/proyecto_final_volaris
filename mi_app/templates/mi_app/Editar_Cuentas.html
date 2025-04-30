@@ -7,10 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAE Respaldo - Editar Cuentas</title>
     <link rel="stylesheet" href="{% static 'CSS/styles_Editar_Cuentas.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/styles_modal_Soporte.css' %}">
+
 
 
 </head>
+
 <body>
+    {% include "Partials/modal_Soporte.html" %} <!-- Include para desplegar el modal de Soporte by Buga-->
     <!-- 🔵 Barra azul superior con el logo y el título -->
     <header class="navbar">
         <!-- Menú desplegable a la izquierda -->
@@ -189,11 +193,12 @@
     <!-- 🔵 Barra azul inferior con los enlaces -->
     <footer class="navbar">
         <div class="nav-links">
-            <a href="#">Soporte Técnico</a>
+            <a href="javascript:void(0);" onclick="abrirModalSoporte()">Soporte Técnico</a>
             <a href="https://www.youtube.com/watch?v=YW4DbwujexU">Tutorial</a>
             <a href="#">Copyright SAE S.T@2025</a>
         </div>
     </footer>
     <script src="{% static 'JS/editarCuentas.js' %}"></script>
+    <script src="{% static 'JS/modal_Soporte.js' %}"></script>
 </body>
 </html>
